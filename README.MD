@@ -81,7 +81,22 @@ Once you've made your contributions, submit a pull request to the main repositor
 
 #### 7. Join the Community
 
-Engage with other developers in the community. Share your progress on social media, ask for feedback, and collaborate on projects. Use the hashtag **#JSProjectList #ULTIMATE-JAVASCRIPT-PROJECT** to connect with others.
+- **Join the Community**: Connect with other contributors and discuss ideas, challenges, and solutions. Join our [Discord server](https://discord.gg/Y9bBw3Na) or follow us on [Twitter](https://x.com/dk_raajaryan).
+- **Share Your Work**: Showcase your completed projects and share your experiences on social media using the hashtag #500JSProjects.
+- **Stay Updated**: Keep an eye on the repository for new ideas, updates, and community contributions.
+
+
+
+### Guidelines for Contribution
+
+To maintain the quality and consistency of the repository, please adhere to the following guidelines:
+
+- **Code Quality**: Ensure your code is clean, well-commented, and adheres to the project's coding standards.
+- **Documentation**: Provide thorough documentation for your project, including installation steps, usage instructions, and examples.
+- **Testing**: Test your project thoroughly and include test cases if applicable.
+- **Collaboration**: Be respectful and open to feedback. Collaboration is key to the success of open-source projects.
+
+
 
 ### Why Contribute?
 
@@ -779,5 +794,13 @@ Happy coding!
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
 Happy coding!
+
+
+
+
+
+
+
+
 
 
