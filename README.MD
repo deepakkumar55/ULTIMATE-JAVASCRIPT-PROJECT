@@ -1,6 +1,6 @@
 
 # Ultimate JavaScript Project Step-by-Step Guide
-![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/li1zycr5vetsbir9qst7.png)
+![Image description](https://miro.medium.com/v2/resize:fit:1200/0*wd6FQh1_55pIeleN.png)
 
 
 Hello, fellow developers and tech enthusiasts!
@@ -205,28 +205,28 @@ Happy coding!
 20. **Movie Database [Repo](./Intermediate%20Projects/10-movie_database/)**
 
 ### Advanced Projects
-21. **Real-time Chat App with WebSockets**
-22. **Social Media Dashboard**
-23. **Job Board**
-24. **Portfolio Website**
-25. **Video Streaming App**
-26. **Blog Platform**
-27. **Project Management Tool**
-28. **Event Management System**
-29. **Online Code Editor**
-30. **News Aggregator**
+21. **Real-time Chat App with WebSockets  [Repo](./Advanced%20Projects/1-real_time_chat_app_with_websockets/)**
+22. **Social Media Dashboard  [Repo](./Advanced%20Projects/2-social_media_dashboard/)**
+23. **Job Board  [Repo](./Advanced%20Projects/3-job_board/)**
+24. **Portfolio Website  [Repo](./Advanced%20Projects/4-portfolio_website/)**
+25. **Video Streaming App  [Repo](./Advanced%20Projects/5-video_streaming_app/)**
+26. **Blog Platform  [Repo](./Advanced%20Projects/6-blog_platform/)**
+27. **Project Management Tool  [Repo](./Advanced%20Projects/7-project_management_tool/)**
+28. **Event Management System  [Repo](./Advanced%20Projects/8-event_management_system/)**
+29. **Online Code Editor  [Repo](./Advanced%20Projects/9-online_code_editor/)**
+30. **News Aggregator  [Repo](./Advanced%20Projects/10-news_aggregator/)**
 
 ### Web Scraping and API Projects
-31. **GitHub User Finder**
-32. **Weather Dashboard using API**
-33. **News App using News API**
-34. **Crypto Tracker using API**
-35. **YouTube Video Search**
-36. **Spotify Playlist Manager**
-37. **Stock Market Tracker**
-38. **Twitter Bot**
-39. **Reddit Clone**
-40. **Recipe Finder using API**
+31. **GitHub User Finder [Repo](./Web%20Scraping%20and%20API%20Projects/1-github_user_finder/)**
+32. **Weather Dashboard using API [Repo](./Web%20Scraping%20and%20API%20Projects/2-weather_dashboard_using_api/)**
+33. **News App using News API [Repo](./Web%20Scraping%20and%20API%20Projects/3-news_app_using_news_api/)**
+34. **Crypto Tracker using API [Repo](./Web%20Scraping%20and%20API%20Projects/4-crypto_tracker_using_api/)**
+35. **YouTube Video Search [Repo](./Web%20Scraping%20and%20API%20Projects/5-youtube_video_search/)**
+36. **Spotify Playlist Manager [Repo](./Web%20Scraping%20and%20API%20Projects/6-spotify_playlist_manager/)**
+37. **Stock Market Tracker [Repo](./Web%20Scraping%20and%20API%20Projects/7-stock_market_tracker/)**
+38. **Twitter Bot [Repo](./Web%20Scraping%20and%20API%20Projects/8-twitter_bot/)**
+39. **Reddit Clone [Repo](./Web%20Scraping%20and%20API%20Projects/9-reddit_clone/)**
+40. **Recipe Finder using API [Repo](./Web%20Scraping%20and%20API%20Projects/10-recipe_finder_using_api/)**
 
 ### Games
 41. **Tic-Tac-Toe**
