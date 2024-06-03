@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Meme Generator</h1>
+        <button id="export">Export</button>
+    </div>
+    <div class="container">
+        <div class="memeForm">
+            <div class="box">
+                <div>
+                    <label for="imgURL">Image URL:</label>
+                    <input type="text" id="imgURL" placeholder="Enter Url Of Image" class="input">
+                </div>
+                <div>
+                    <label for="imgFile">Upload Image:</label>
+                    <input type="file" id="imgFile" class="input">
+                </div>
+            </div>
+            <div class="box">
+                <div>
+                    <label for="textTop">Top Text:</label>
+                    <input type="text" id="textTop" placeholder="Enter Top Text" class="input">
+                </div>
+                <div>
+                    <label for="textBottom">Bottom Text:</label>
+                    <input type="text" id="textBottom" placeholder="Enter Bottom Text" class="input">
+                </div>
+            </div>
+            <div class="box">
+                <div class="sliderContainer">
+                    <label for="textSizeTop">Top Text Size:</label>
+                    <input type="range" id="textSizeTop" min="10" max="100" value="10">
+                    <span id="textSizeTopOut">10</span>
+                </div>
+                <div class="sliderContainer">
+                    <label for="textSizeBottom">Bottom Text Size:</label>
+                    <input type="range" id="textSizeBottom" min="10" max="100" value="10">
+                    <span id="textSizeBottomOut">10</span>
+                </div>
+            </div>
+            <div class="box">
+                <div>
+                    <input type="checkbox" id="trueSize">
+                    <label for="trueSize">True Size</label>
+                </div>
+            </div>
+        </div>
+        <div id="canvasWrapper"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
