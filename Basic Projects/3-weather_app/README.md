@@ -76,4 +76,4 @@ If you have any questions or need further assistance, feel free to open an issue
 
 ---
 
-Thank you for your interest in the To-Do List project. Together, we can build a more robust and feature-rich application. Happy coding!
+Thank you for your interest in the project. Together, we can build a more robust and feature-rich application. Happy coding!
