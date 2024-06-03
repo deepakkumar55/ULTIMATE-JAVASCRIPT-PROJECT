@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Weather App Project</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Weather Dashboard</h1>
+    <div class="container">
+      <div class="weather-input">
+        <h3>Enter a City Name</h3>
+        <input class="city-input" id="city" type="text" placeholder="E.g., Bhopal, Mehsi, Muzaffarpur, Patna">
+        <button class="search-btn" onclick="getWeather()">Search</button>
+        <div class="separator"></div>
+        <button class="location-btn" onclick="getWeatherByLocation()">Use Current Location</button>
+      </div>
+      <div class="weather-data">
+        <div class="current-weather">
+          <div class="details">
+            <h2 id="city-name">_______ ( ______ )</h2>
+            <h6 id="temp">Temperature: __°C</h6>
+            <h6 id="wind">Wind: __ M/S</h6>
+            <h6 id="humidity">Humidity: __%</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
