@@ -181,16 +181,16 @@ Happy coding!
 
 
 ### Basic Projects
-1. **To-Do List [Repo](./Basic%20Projects/1-to_do_list/)/ [LiveRun](https://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/1-to_do_list)**
-2. **Calculator [Repo](./Basic%20Projects/2-calculator/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/2-calculator)**
-3. **Weather App [Repo](./Basic%20Projects/3-weather_app/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/3-weather_app)**
-4. **Clock [Repo](./Basic%20Projects/4-clock/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/4-clock)**
-5. **Trivia Game [Repo](./Basic%20Projects/5-trivia_game/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/5-trivia_game/)**
-6. **Currency Converter [Repo](./Basic%20Projects/6-currency_converter/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/6-currency_converter/)**
-7. **Tip Calculator [Repo](./Basic%20Projects/7-tip_calculator/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/7-tip_calculator/)**
-8. **Countdown Timer [Repo](./Basic%20Projects/8-countdown_timer/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/8-countdown_timer/)**
-9. **Pomodoro Timer [Repo](./Basic%20Projects/9-pomodoro_timer/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/9-pomodoro_timer/)**
-10. **BMI Calculator [Repo](./Basic%20Projects/10-bmi_calculator/)/ [LiveRun](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/10-bmi_calculator/)**
+1. **To-Do List [Repo](./Basic%20Projects/1-to_do_list/)/ [Live Demo](https://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/1-to_do_list)**
+2. **Calculator [Repo](./Basic%20Projects/2-calculator/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/2-calculator)**
+3. **Weather App [Repo](./Basic%20Projects/3-weather_app/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/3-weather_app)**
+4. **Clock [Repo](./Basic%20Projects/4-clock/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/4-clock)**
+5. **Trivia Game [Repo](./Basic%20Projects/5-trivia_game/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/5-trivia_game/)**
+6. **Currency Converter [Repo](./Basic%20Projects/6-currency_converter/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/6-currency_converter/)**
+7. **Tip Calculator [Repo](./Basic%20Projects/7-tip_calculator/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/7-tip_calculator/)**
+8. **Countdown Timer [Repo](./Basic%20Projects/8-countdown_timer/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/8-countdown_timer/)**
+9. **Pomodoro Timer [Repo](./Basic%20Projects/9-pomodoro_timer/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/9-pomodoro_timer/)**
+10. **BMI Calculator [Repo](./Basic%20Projects/10-bmi_calculator/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/10-bmi_calculator/)**
 
 ### Intermediate Projects
 11. **Notes App [Repo](./Intermediate%20Projects/1-notes_app/)**
