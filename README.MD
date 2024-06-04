@@ -179,6 +179,7 @@ Happy coding!
 ---
 
 
+Here's the revised list with the added repository and live demo links for the projects:
 
 ### Basic Projects
 1. **To-Do List [Repo](./Basic%20Projects/1-to_do_list/)/ [Live Demo](https://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/1-to_do_list)**
@@ -193,41 +194,40 @@ Happy coding!
 10. **BMI Calculator [Repo](./Basic%20Projects/10-bmi_calculator/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Basic%20Projects/10-bmi_calculator/)**
 
 ### Intermediate Projects
-11. **Notes App [Repo](./Intermediate%20Projects/1-notes_app/)**
-12. **Chat Application [Repo](./Intermediate%20Projects/2-chat_application/)**
-13. **Recipe App [Repo](./Intermediate%20Projects/3-recipe_app/)**
-14. **Music Player [Repo](./Intermediate%20Projects/4-music_player/)**
-15. **Image Slider [Repo](./Intermediate%20Projects/5-image_slider/)**
-16. **Quiz App [Repo](./Intermediate%20Projects/6-quiz_app/)**
-17. **E-commerce Website [Repo](./Intermediate%20Projects/7-e_commerce_website/)**
-18. **Task Tracker [Repo](./Intermediate%20Projects/8-task_tracker/)**
-19. **Expense Tracker [Repo](./Intermediate%20Projects/9-expense_tracker/)**
-20. **Movie Database [Repo](./Intermediate%20Projects/10-movie_database/)**
+11. **Notes App [Repo](./Intermediate%20Projects/1-notes_app/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/1-notes_app/)**
+12. **Chat Application [Repo](./Intermediate%20Projects/2-chat_application/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/2-chat_application/)**
+13. **Recipe App [Repo](./Intermediate%20Projects/3-recipe_app/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/3-recipe_app/)**
+14. **Music Player [Repo](./Intermediate%20Projects/4-music_player/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/4-music_player/)**
+15. **Image Slider [Repo](./Intermediate%20Projects/5-image_slider/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/5-image_slider/)**
+16. **Quiz App [Repo](./Intermediate%20Projects/6-quiz_app/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/6-quiz_app/)**
+17. **E-commerce Website [Repo](./Intermediate%20Projects/7-e_commerce_website/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/7-e_commerce_website/)**
+18. **Task Tracker [Repo](./Intermediate%20Projects/8-task_tracker/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/8-task_tracker/)**
+19. **Expense Tracker [Repo](./Intermediate%20Projects/9-expense_tracker/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/9-expense_tracker/)**
+20. **Movie Database [Repo](./Intermediate%20Projects/10-movie_database/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Intermediate%20Projects/10-movie_database/)**
 
 ### Advanced Projects
-21. **Real-time Chat App with WebSockets  [Repo](./Advanced%20Projects/1-real_time_chat_app_with_websockets/)**
-22. **Social Media Dashboard  [Repo](./Advanced%20Projects/2-social_media_dashboard/)**
-23. **Job Board  [Repo](./Advanced%20Projects/3-job_board/)**
-24. **Portfolio Website  [Repo](./Advanced%20Projects/4-portfolio_website/)**
-25. **Video Streaming App  [Repo](./Advanced%20Projects/5-video_streaming_app/)**
-26. **Blog Platform  [Repo](./Advanced%20Projects/6-blog_platform/)**
-27. **Project Management Tool  [Repo](./Advanced%20Projects/7-project_management_tool/)**
-28. **Event Management System  [Repo](./Advanced%20Projects/8-event_management_system/)**
-29. **Online Code Editor  [Repo](./Advanced%20Projects/9-online_code_editor/)**
-30. **News Aggregator  [Repo](./Advanced%20Projects/10-news_aggregator/)**
+21. **Real-time Chat App with WebSockets [Repo](./Advanced%20Projects/1-real_time_chat_app_with_websockets/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/1-real_time_chat_app_with_websockets/)**
+22. **Social Media Dashboard [Repo](./Advanced%20Projects/2-social_media_dashboard/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/2-social_media_dashboard/)**
+23. **Job Board [Repo](./Advanced%20Projects/3-job_board/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/3-job_board/)**
+24. **Portfolio Website [Repo](./Advanced%20Projects/4-portfolio_website/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/4-portfolio_website/)**
+25. **Video Streaming App [Repo](./Advanced%20Projects/5-video_streaming_app/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/5-video_streaming_app/)**
+26. **Blog Platform [Repo](./Advanced%20Projects/6-blog_platform/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/6-blog_platform/)**
+27. **Project Management Tool [Repo](./Advanced%20Projects/7-project_management_tool/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/7-project_management_tool/)**
+28. **Event Management System [Repo](./Advanced%20Projects/8-event_management_system/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/8-event_management_system/)**
+29. **Online Code Editor [Repo](./Advanced%20Projects/9-online_code_editor/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/9-online_code_editor/)**
+30. **News Aggregator [Repo](./Advanced%20Projects/10-news_aggregator/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Advanced%20Projects/10-news_aggregator/)**
 
 ### Web Scraping and API Projects
-31. **GitHub User Finder [Repo](./Web%20Scraping%20and%20API%20Projects/1-github_user_finder/)**
-32. **Weather Dashboard using API [Repo](./Web%20Scraping%20and%20API%20Projects/2-weather_dashboard_using_api/)**
-33. **News App using News API [Repo](./Web%20Scraping%20and%20API%20Projects/3-news_app_using_news_api/)**
-34. **Crypto Tracker using API [Repo](./Web%20Scraping%20and%20API%20Projects/4-crypto_tracker_using_api/)**
-35. **YouTube Video Search [Repo](./Web%20Scraping%20and%20API%20Projects/5-youtube_video_search/)**
+31. **GitHub User Finder [Repo](./Web%20Scraping%20and%20API%20Projects/1-github_user_finder/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Web%20Scraping%20and%20API%20Projects/1-github_user_finder/)**
+32. **Weather Dashboard using API [Repo](./Web%20Scraping%20and%20API%20Projects/2-weather_dashboard_using_api/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Web%20Scraping%20and%20API%20Projects/2-weather_dashboard_using_api/)**
+33. **News App using News API [Repo](./Web%20Scraping%20and%20API%20Projects/3-news_app_using_news_api/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Web%20Scraping%20and%20API%20Projects/3-news_app_using_news_api/)**
+34. **Crypto Tracker using API [Repo](./Web%20Scraping%20and%20API%20Projects/4-crypto_tracker_using_api/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Web%20Scraping%20and%20API%20Projects/4-crypto_tracker_using_api/)**
+35. **YouTube Video Search [Repo](./Web%20Scraping%20and%20API%20Projects/5-youtube_video_search/)/ [Live Demo](http://deepakkumar55.github.io/ULTIMATE-JAVASCRIPT-PROJECT/Web%20Scraping%20and%20API%20Projects/5-youtube_video_search/)**
 36. **Spotify Playlist Manager [Repo](./Web%20Scraping%20and%20API%20Projects/6-spotify_playlist_manager/)**
 37. **Stock Market Tracker [Repo](./Web%20Scraping%20and%20API%20Projects/7-stock_market_tracker/)**
 38. **Twitter Bot [Repo](./Web%20Scraping%20and%20API%20Projects/8-twitter_bot/)**
 39. **Reddit Clone [Repo](./Web%20Scraping%20and%20API%20Projects/9-reddit_clone/)**
 40. **Recipe Finder using API [Repo](./Web%20Scraping%20and%20API%20Projects/10-recipe_finder_using_api/)**
-
 ### Games
 41. **Tic-Tac-Toe**
 42. **Memory Game**
@@ -787,11 +787,3 @@ Happy coding!
 - **Twitter [Link](https://x.com/dk_raajaryan)**
 - **Github [Link](http://github.com/deepakkumar55/)**
 - **Instagram [Link](https://www.instagram.com/_nature__editing/)**
-
-
-
-
-
-
-
-
