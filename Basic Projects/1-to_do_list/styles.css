@@ -1,83 +1,69 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
-
-.header {
-    background-color: #007bff;
-    color: #fff;
-    padding: 20px;
+.todo-app {
     text-align: center;
-}
-
-.header h1 {
-    margin: 0;
-}
-
-.task-form {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-.task-form input {
+    font-family: Arial, sans-serif;
+  }
+  
+  input[type="text"] {
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px 0 0 5px;
-    width: 70%;
-}
-
-.task-form button {
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: #fff;
+    width: 300px;
+    margin: 20px 0;
+    font-size: 16px;
+  }
+  
+  button {
+    padding: 10px 15px;
+    margin: 0 5px;
+    font-size: 16px;
+  }
+  
+  .filter-buttons button {
+    background-color: #f1f1f1;
     border: none;
-    border-radius: 0 5px 5px 0;
     cursor: pointer;
-}
-
-.task-form input::placeholder {
-    color: #999;
-}
-
-.task-form button:hover {
-    background-color: #0056b3;
-}
-
-.container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 0 20px;
-}
-
-.task-list {
+  }
+  
+  .filter-buttons button.active {
+    background-color: #000;
+    color: #fff;
+  }
+  
+  .filter-buttons button:hover {
+    background-color: #ddd;
+  }
+  
+  ul {
     list-style-type: none;
     padding: 0;
-}
-
-.task-item {
+  }
+  
+  li {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin: 10px 0;
     padding: 10px;
-    border-bottom: 1px solid #ccc;
-}
-
-.task-item:last-child {
-    border-bottom: none;
-}
-
-.task-item input[type="checkbox"] {
+    border: 1px solid #ccc;
+  }
+  
+  li span {
+    flex: 1;
+    margin: 0 10px;
+    text-align: left;
+  }
+  
+  li input[type="checkbox"] {
     margin-right: 10px;
-}
-
-.task-item button {
-    margin-left: auto;
-    padding: 5px 10px;
-    background-color: #dc3545;
-    color: #fff;
+  }
+  
+  li button {
+    background-color: red;
+    color: white;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-}
+    margin-left: 10px;
+  }
+  
+  li button:hover {
+    background-color: darkred;
+  }
+  

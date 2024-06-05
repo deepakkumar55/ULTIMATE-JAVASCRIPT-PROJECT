@@ -1,27 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>To-Do List App</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TodoMatic</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
-<div class="header">
-    <h1>To-Do List App</h1>
-    <form id="taskForm" class="task-form">
-        <input type="text" id="taskInput" placeholder="Enter a new task...">
-        <button type="submit">Add Task</button>
-    </form>
-</div>
-
-<div class="container">
-    <ul id="taskList" class="task-list">
-        <!-- Tasks will be dynamically added here -->
-    </ul>
-</div>
-
-<script src="scripts.js"></script>
+  <div class="todo-app">
+    <h1>TodoMatic</h1>
+    <input id="new-task" type="text" placeholder="What needs to be done?" />
+    <button id="add-button">Add</button>
+    <div class="filter-buttons">
+      <button id="filter-all" class="active">All</button>
+      <button id="filter-active">Active</button>
+      <button id="filter-completed">Completed</button>
+    </div>
+    <h2 id="task-count">0 tasks remaining</h2>
+    <ul id="task-list"></ul>
+  </div>
+  <script src="scripts.js"></script>
 </body>
 </html>

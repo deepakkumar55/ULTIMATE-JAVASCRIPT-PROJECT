@@ -1,114 +1,99 @@
-const taskList = document.getElementById('taskList');
+document.addEventListener('DOMContentLoaded', () => {
+  const taskList = document.getElementById('task-list');
+  const taskInput = document.getElementById('new-task');
+  const addButton = document.getElementById('add-button');
+  const filterButtons = document.querySelectorAll('.filter-buttons button');
+  const taskCount = document.getElementById('task-count');
+  let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+  let filter = 'All';
 
-document.getElementById('taskForm').addEventListener('submit', (e) => {
-  e.preventDefault();
+  const saveTasks = () => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  };
 
-  const input = document.getElementById('taskInput').value.trim();
+  const updateTaskCount = () => {
+    const remainingTasks = tasks.filter(task => !task.completed).length;
+    taskCount.textContent = `${remainingTasks} tasks remaining`;
+  };
 
-  if (input) {
-    const taskItem = document.createElement('li');
-    taskItem.classList.add('task-item');
-    
-    const taskText = document.createElement('span');
-    taskText.textContent = input;
-
-    const checkBox = document.createElement('input');
-    checkBox.type = 'checkbox';
-    checkBox.addEventListener('click', () => {
-      taskItem.style.backgroundColor = checkBox.checked ? 'green' : '';
+  const renderTasks = () => {
+    taskList.innerHTML = '';
+    const filteredTasks = tasks.filter(task => {
+      if (filter === 'All') return true;
+      if (filter === 'Active') return !task.completed;
+      if (filter === 'Completed') return task.completed;
     });
 
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', () => {
-      taskItem.remove();
+    filteredTasks.forEach((task, index) => {
+      const li = document.createElement('li');
+      const checkbox = document.createElement('input');
+      checkbox.type = 'checkbox';
+      checkbox.checked = task.completed;
+      checkbox.addEventListener('change', () => toggleTaskCompletion(index));
+
+      const taskText = document.createElement('span');
+      taskText.textContent = task.text;
+
+      const editButton = document.createElement('button');
+      editButton.textContent = 'Edit';
+      editButton.addEventListener('click', () => editTask(index));
+
+      const deleteButton = document.createElement('button');
+      deleteButton.textContent = 'Delete';
+      deleteButton.addEventListener('click', () => deleteTask(index));
+
+      li.appendChild(checkbox);
+      li.appendChild(taskText);
+      li.appendChild(editButton);
+      li.appendChild(deleteButton);
+
+      taskList.appendChild(li);
     });
 
-    taskItem.appendChild(checkBox);
-    taskItem.appendChild(taskText);
-    taskItem.appendChild(deleteButton);
+    updateTaskCount();
+  };
 
-    taskList.appendChild(taskItem);
+  const addTask = () => {
+    const taskText = taskInput.value.trim();
+    if (taskText) {
+      tasks.push({ text: taskText, completed: false });
+      taskInput.value = '';
+      saveTasks();
+      renderTasks();
+    }
+  };
 
-    document.getElementById('taskInput').value = '';
-  }
+  const toggleTaskCompletion = (index) => {
+    tasks[index].completed = !tasks[index].completed;
+    saveTasks();
+    renderTasks();
+  };
+
+  const editTask = (index) => {
+    const newText = prompt('Edit task:', tasks[index].text);
+    if (newText !== null) {
+      tasks[index].text = newText;
+      saveTasks();
+      renderTasks();
+    }
+  };
+
+  const deleteTask = (index) => {
+    tasks.splice(index, 1);
+    saveTasks();
+    renderTasks();
+  };
+
+  addButton.addEventListener('click', addTask);
+
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+      filter = button.textContent;
+      renderTasks();
+    });
+  });
+
+  renderTasks();
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener("DOMContentLoaded", function () {
-//     const taskForm = document.getElementById("taskForm");
-//     const taskInput = document.getElementById("taskInput");
-//     const taskList = document.getElementById("taskList");
-  
-//     function createTaskItem(taskContent) {
-//       const taskItem = document.createElement("li");
-//       taskItem.classList.add("task-item");
-  
-//       const checkBox = document.createElement("input");
-//       checkBox.type = "checkbox";
-//       checkBox.addEventListener('click', function () {
-//         taskText.style.backgroundColor = checkBox.checked ? 'green' : '';
-//       });
-  
-//       const taskText = document.createElement("span");
-//       taskText.textContent = taskContent;
-  
-//       const deleteButton = document.createElement("button");
-//       deleteButton.textContent = "Delete";
-//       deleteButton.addEventListener("click", function () {
-//         taskItem.remove();
-//       });
-  
-//       taskItem.appendChild(checkBox);
-//       taskItem.appendChild(taskText);
-//       taskItem.appendChild(deleteButton);
-  
-//       taskList.appendChild(taskItem);
-//     }
-  
-//     taskForm.addEventListener("submit", function (event) {
-//       event.preventDefault();
-//       const taskContent = taskInput.value.trim();
-//       if (taskContent !== "") {
-//         createTaskItem(taskContent);
-//         taskInput.value = "";
-//       }
-//     });
-//   });
-  

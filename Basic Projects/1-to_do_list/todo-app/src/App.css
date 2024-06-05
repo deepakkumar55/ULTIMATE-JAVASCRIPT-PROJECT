@@ -1,0 +1,60 @@
+.todo-app {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 300px;
+  margin: 20px 0;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 15px;
+  margin: 0 5px;
+  font-size: 16px;
+}
+
+.filter-buttons button {
+  background-color: #f1f1f1;
+  border: none;
+  cursor: pointer;
+}
+
+.filter-buttons button.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.filter-buttons button:hover {
+  background-color: #ddd;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+li input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+li button {
+  margin-left: 10px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+li button:hover {
+  background-color: darkred;
+}
