@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #faf8ef;
+    font-family: Arial, sans-serif;
+}
+
+.game-container {
+    text-align: center;
+}
+
+#score {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(4, 100px);
+    gap: 10px;
+}
+
+.grid-cell {
+    width: 100px;
+    height: 100px;
+    background-color: #cdc1b4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.grid-cell[data-value="2"] {
+    background-color: #eee4da;
+}
+
+.grid-cell[data-value="4"] {
+    background-color: #ede0c8;
+}
+
+.grid-cell[data-value="8"] {
+    background-color: #f2b179;
+    color: #f9f6f2;
+}
+
+/* Add more styles for other tile values as needed */
