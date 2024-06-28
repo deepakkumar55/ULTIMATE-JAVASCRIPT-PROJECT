@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.balance {
+    text-align: center;
+}
+
+.summary {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.summary div {
+    text-align: center;
+    flex: 1;
+}
+
+.summary .money {
+    font-size: 20px;
+}
+
+.money.plus {
+    color: green;
+}
+
+.money.minus {
+    color: red;
+}
+
+.transaction-form {
+    margin: 20px 0;
+}
+
+.transaction-form input,
+.transaction-form select,
+.transaction-form button {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.transaction-form select {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.transaction-list {
+    margin: 20px 0;
+}
+
+.transaction-list ul {
+    list-style-type: none;
+}
+
+.transaction-list li {
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    align-items: center;
+}
+
+.transaction-list li.plus {
+    border-left: 5px solid green;
+}
+
+.transaction-list li.minus {
+    border-left: 5px solid red;
+}
+
+.transaction-list .delete-btn {
+    background: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
