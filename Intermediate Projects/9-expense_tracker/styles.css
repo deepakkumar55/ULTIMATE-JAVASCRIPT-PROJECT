@@ -50,13 +50,17 @@ h1 {
     color: red;
 }
 
-.transaction-form {
+.transaction-form,
+.filter-search {
     margin: 20px 0;
 }
 
 .transaction-form input,
 .transaction-form select,
-.transaction-form button {
+.transaction-form button,
+.filter-search input,
+.filter-search select,
+.filter-search button {
     width: calc(100% - 20px);
     padding: 10px;
     margin: 10px 0;
@@ -64,9 +68,16 @@ h1 {
     border: 1px solid #ddd;
 }
 
-.transaction-form select {
-    background-color: #f4f4f4;
-    color: #333;
+.filter-search input,
+.filter-search select {
+    display: inline-block;
+    width: calc(33% - 20px);
+    margin-right: 10px;
+}
+
+.filter-search button {
+    display: inline-block;
+    width: calc(100% - 20px);
 }
 
 .transaction-list {
@@ -96,11 +107,29 @@ h1 {
     border-left: 5px solid red;
 }
 
-.transaction-list .delete-btn {
+.transaction-list .delete-btn,
+.transaction-list .edit-btn {
     background: red;
     color: white;
     border: none;
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    margin-left: 5px;
+}
+
+.transaction-list .edit-btn {
+    background: blue;
+}
+
+@media (max-width: 600px) {
+    .summary {
+        flex-direction: column;
+    }
+    
+    .filter-search input,
+    .filter-search select {
+        width: calc(100% - 20px);
+        margin-right: 0;
+    }
 }
