@@ -1,0 +1,44 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #dee4e7;
+}
+.container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #dee4e7;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    
+}
+input[type = "text"],select,input[type = "number"],input[type=submit]{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 4px rgba(140, 201, 112, 0.1);
+}
+input[type=submit]{
+    background-color: #4caf5d;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+table{
+    width: 100%;
+    border-collapse: collapse;
+}
+th,td{
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* background-color: #4caf5d */
+}
+th{
+    background-color: #4caf5d;
+    color: white;
+    font-weight: bold;
+}
