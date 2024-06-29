@@ -1,0 +1,35 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+h1 {
+  margin-bottom: 20px;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 300px;
+  margin: 0 auto;
+}
+.cell {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #ccc;
+  font-size: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.cell:hover {
+  background-color: #eee;
+}
+.message {
+  font-size: 24px;
+  margin-top: 20px;
+}
+.reset {
+  margin-top: 20px;
+  font-size: 18px;
+  padding: 10px 20px;
+}
