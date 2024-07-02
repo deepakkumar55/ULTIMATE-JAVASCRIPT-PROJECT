@@ -1,0 +1,197 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --calculator-bg: #f0f0f0;
+  --input-bg: #ffffff;
+  --input-border: #dddddd;
+  --button-bg: #4CAF50;
+  --button-hover: #45a049;
+}
+
+.page {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  --bg-color: #333333;
+  --text-color: #ffffff;
+  --calculator-bg: #444444;
+  --input-bg: #555555;
+  --input-border: #666666;
+  --button-bg: #45a049;
+  --button-hover: #4CAF50;
+}
+
+.bmi-calculator {
+  background-color: var(--calculator-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  max-width: 300px;
+  width: 100%;
+}
+
+.bmi-calculator__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bmi-calculator__input-group {
+  margin-bottom: 15px;
+}
+
+.bmi-calculator__label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.bmi-calculator__input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  box-sizing: border-box;
+}
+
+.bmi-calculator__button {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bmi-calculator__button:hover {
+  background-color: var(--button-hover);
+}
+
+.bmi-calculator__result {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 5px 10px;
+  background-color: var(--button-bg);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333333;
+}
+
+.theme-toggle {
+  --size: 2rem;
+  --icon-fill: currentColor;
+  --icon-fill-hover: currentColor;
+  background: none;
+  border: none;
+  padding: 0;
+  inline-size: var(--size);
+  block-size: var(--size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline-offset: 5px;
+}
+
+.theme-toggle > svg {
+  inline-size: 100%;
+  block-size: 100%;
+  stroke-linecap: round;
+}
+
+.sun-and-moon > :is(.moon, .sun, .sun-beams) {
+  transform-origin: center center;
+}
+
+.sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill);
+}
+
+.theme-toggle:is(:hover, :focus-visible) > .sun-and-moon > :is(.moon, .sun) {
+  fill: var(--icon-fill-hover);
+}
+
+.sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill);
+  stroke-width: 2px;
+}
+
+.theme-toggle:is(:hover, :focus-visible) .sun-and-moon > .sun-beams {
+  stroke: var(--icon-fill-hover);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun {
+  transform: scale(1.75);
+}
+
+[data-theme="dark"] .sun-and-moon > .sun-beams {
+  opacity: 0;
+}
+
+[data-theme="dark"] .sun-and-moon > .moon > circle {
+  transform: translateX(-7px);
+}
+
+@supports (cx: 1) {
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    cx: 17;
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .sun-and-moon > .sun {
+    transition: transform 0.5s var(--ease-elastic-3);
+  }
+
+  .sun-and-moon > .sun-beams {
+    transition: transform 0.5s var(--ease-elastic-4), opacity 0.5s var(--ease-3);
+  }
+
+  .sun-and-moon .moon > circle {
+    transition: transform 0.25s var(--ease-out-5);
+  }
+
+  @supports (cx: 1) {
+    .sun-and-moon .moon > circle {
+      transition: cx 0.25s var(--ease-out-5);
+    }
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun {
+    transform: scale(1.75);
+    transition-timing-function: var(--ease-3);
+    transition-duration: 0.25s;
+  }
+
+  [data-theme="dark"] .sun-and-moon > .sun-beams {
+    transform: rotateZ(-25deg);
+    transition-duration: 0.15s;
+  }
+
+  [data-theme="dark"] .sun-and-moon > .moon > circle {
+    transition-delay: 0.25s;
+    transition-duration: 0.5s;
+  }
+}
