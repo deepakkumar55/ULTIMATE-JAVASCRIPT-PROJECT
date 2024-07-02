@@ -1,0 +1,185 @@
+:root {
+  /* Colors and existing variables */
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --input-bg: #f0f0f0;
+  --button-bg: #4CAF50;
+  --button-text: #ffffff;
+  --button-hover-bg: #45a049;
+  --button-hover-text: #ffffff;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  /* Font family */
+  --font-family: Arial, sans-serif;
+  
+  /* Border variables */
+  --border-color: #cccccc;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 4px;
+  
+  /* Font sizes */
+  --font-size-large: 24px;
+  --font-size-medium: 16px;
+  --font-size-small: 14px;
+  
+  /* Spacing variables */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+}
+
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --input-bg: #2a2a2a;
+  --button-bg: #4CAF50;
+  --button-text: #ffffff;
+  --button-hover-bg: #45a049;
+  --button-hover-text: #ffffff;
+  --box-shadow: 0 0 10px rgba(255, 255, 255, 0.1),
+                inset 0 0 0.5px 1px hsla(0, 0%, 100%, 0.075),
+                0 0 0 1px hsla(0, 0%, 0%, 0.05),
+                0 0.3px 0.4px hsla(0, 0%, 100%, 0.02),
+                0 0.9px 1.5px hsla(0, 0%, 100%, 0.045),
+                0 3.5px 6px hsla(0, 0%, 100%, 0.09);
+  
+  /* Dark theme border variables */
+  --border-color: #444444;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-lg);
+  transition: background-color 0.3s, color 0.3s;
+  box-sizing: border-box;
+  font-size: var(--font-size-medium);
+}
+
+.calculator {
+  background-color: var(--bg-color);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 400px;
+  width: 100%;
+  border: var(--border-width) var(--border-style) var(--border-color);
+}
+
+.calculator__title {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  font-size: var(--font-size-large);
+}
+
+.calculator__input {
+  margin-bottom: var(--space-md);
+}
+
+.calculator__label {
+  display: block;
+  margin-bottom: var(--space-xs);
+  font-size: var(--font-size-small);
+}
+
+.calculator__field {
+  width: 100%;
+  padding: var(--space-sm);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  box-sizing: border-box;
+  font-size: var(--font-size-medium);
+}
+
+.calculator__button {
+  width: 100%;
+  padding: var(--space-sm);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-medium);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.calculator__button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+.calculator__results {
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-medium);
+}
+
+.calculator__input--hidden {
+  display: none;
+}
+
+.theme-toggle {
+  position: fixed;
+  top: var(--space-sm);
+  right: var(--space-sm);
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: var(--font-size-small);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.theme-toggle:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
+}
+
+@media screen and (max-width: 480px) {
+  :root {
+    --font-size-large: 20px;
+    --font-size-medium: 14px;
+    --font-size-small: 12px;
+
+    --space-lg: 20px;
+    --space-md: 12px;
+    --space-sm: 8px;
+    --space-xs: 4px;
+  }
+
+  body {
+    padding: var(--space-sm);
+  }
+
+  .calculator {
+    padding: var(--space-md);
+    width: 90%;
+  }
+
+  .calculator__field {
+    padding: var(--space-xs);
+  }
+
+  .calculator__button {
+    padding: var(--space-xs);
+  }
+
+  .theme-toggle {
+    padding: var(--space-xxs) var(--space-xs);
+  }
+}
