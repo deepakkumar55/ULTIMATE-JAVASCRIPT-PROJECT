@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Expense Tracker</h1>
+        <div class="balance">
+            <h2>Your Balance</h2>
+            <h3 id="balance">$0.00</h3>
+        </div>
+        <div class="summary">
+            <div class="income">
+                <h3>Income</h3>
+                <p id="income" class="money plus">+$0.00</p>
+            </div>
+            <div class="expense">
+                <h3>Expense</h3>
+                <p id="expense" class="money minus">-$0.00</p>
+            </div>
+        </div>
+        <div class="transaction-form">
+            <h3>Add Transaction</h3>
+            <form id="transaction-form">
+                <input type="text" id="description" placeholder="Description" required>
+                <input type="number" id="amount" placeholder="Amount" required>
+                <input type="date" id="date" required>
+                <select id="category">
+                    <option value="Income">Income</option>
+                    <option value="Food">Food</option>
+                    <option value="Transport">Transport</option>
+                    <option value="Entertainment">Entertainment</option>
+                    <option value="Other">Other</option>
+                </select>
+                <button type="submit">Add Transaction</button>
+            </form>
+        </div>
+        <div class="filter-search">
+            <h3>Filter & Search</h3>
+            <input type="text" id="search" placeholder="Search by description">
+            <select id="filter-category">
+                <option value="all">All Categories</option>
+                <option value="Income">Income</option>
+                <option value="Food">Food</option>
+                <option value="Transport">Transport</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Other">Other</option>
+            </select>
+            <input type="date" id="filter-date">
+            <button id="filter-btn">Filter</button>
+        </div>
+        <div class="transaction-list">
+            <h3>Transactions</h3>
+            <ul id="list">
+                <!-- Transactions will be added here dynamically -->
+            </ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
