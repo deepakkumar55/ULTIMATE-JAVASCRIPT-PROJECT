@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tip Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="calculator">
+    <h1 class="calculator__title">Tip Calculator</h1>
+    <div class="calculator__input">
+      <label for="bill" class="calculator__label">Bill Amount:</label>
+      <input type="number" id="bill" class="calculator__field" placeholder="Enter bill amount">
+    </div>
+    <div class="calculator__input">
+      <label for="tipPercentage" class="calculator__label">Tip Percentage:</label>
+      <select id="tipPercentage" class="calculator__field">
+        <option value="0.10">10%</option>
+        <option value="0.15">15%</option>
+        <option value="0.20">20%</option>
+        <option value="custom">Custom</option>
+      </select>
+    </div>
+    <div id="customTipInput" class="calculator__input calculator__input--hidden">
+      <label for="customTip" class="calculator__label">Custom Tip %:</label>
+      <input type="number" id="customTip" class="calculator__field" placeholder="Enter custom tip %">
+    </div>
+    <div class="calculator__input">
+      <label for="people" class="calculator__label">Number of People:</label>
+      <input type="number" id="people" class="calculator__field" placeholder="Enter number of people" value="1">
+    </div>
+    <button id="calculate" class="calculator__button">Calculate</button>
+    <div id="results" class="calculator__results">
+      <p>Tip Amount: <span id="tipAmount"></span></p>
+      <p>Total Amount: <span id="totalAmount"></span></p>
+      <p>Amount per Person: <span id="amountPerPerson"></span></p>
+    </div>
+  </div>
+  <button id="themeToggle" class="theme-toggle">Toggle Dark Mode</button>
+  <script src="script.js"></script>
+</body>
+
+</html>
