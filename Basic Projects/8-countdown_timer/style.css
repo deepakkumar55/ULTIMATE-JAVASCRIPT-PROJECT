@@ -1,53 +1,133 @@
 :root {
-  --background-color: #ffffff;
-  --text-color: #000000;
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --input-bg: #f0f0f0;
+  --input-text: #333333;
   --button-bg: #4CAF50;
-  --button-text: white;
+  --button-text: #ffffff;
+  --button-hover-bg: #45a049;
+  --button-hover-text: #ffffff;
+  --box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  
+  --font-family: Arial, sans-serif;
+  
+  --border-color: #cccccc;
+  --border-width: 1px;
+  --border-style: solid;
+  --border-radius: 4px;
+  
+  --font-size-large: 24px;
+  --font-size-medium: 16px;
+  --font-size-small: 14px;
+  
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: var(--font-family);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   margin: 0;
-  background-color: var(--background-color);
+  background-color: var(--bg-color);
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
 }
 
-.container {
+body.dark-mode {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --input-bg: #333333;
+  --input-text: #ffffff;
+  --button-bg: #45a049;
+  --button-hover-bg: #4CAF50;
+  --border-color: #555555;
+  --box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.countdown {
   text-align: center;
-  background-color: var(--background-color);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  background-color: var(--bg-color);
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  max-width: 400px;
 }
 
-select {
-  margin: 5px;
-  padding: 5px;
+.countdown__title {
+  font-size: var(--font-size-large);
+  margin-bottom: var(--space-md);
 }
 
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  font-size: 16px;
+.countdown__selectors {
+  margin-bottom: var(--space-md);
+}
+
+.countdown__selector {
+  margin: var(--space-xxs);
+  padding: var(--space-xs);
+  background-color: var(--input-bg);
+  color: var(--input-text);
+  border: var(--border-width) var(--border-style) var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.countdown__display {
+  font-size: var(--font-size-large);
+  margin: var(--space-lg) 0;
+}
+
+.countdown__button {
+  margin: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  font-size: var(--font-size-medium);
   cursor: pointer;
   background-color: var(--button-bg);
   color: var(--button-text);
   border: none;
-  border-radius: 5px;
+  border-radius: var(--border-radius);
+  transition: background-color 0.3s, color 0.3s;
 }
 
-#timer {
-  font-size: 48px;
-  margin: 20px 0;
+.countdown__button:hover {
+  background-color: var(--button-hover-bg);
+  color: var(--button-hover-text);
 }
 
-.dark-mode {
-  --background-color: #1a1a1a;
-  --text-color: #ffffff;
-  --button-bg: #45a049;
+.countdown__button--dark-mode {
+  background-color: #333;
+}
+
+body.dark-mode .countdown__button--dark-mode {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+@media only screen and (max-width: 480px) {
+  .countdown {
+    width: 90%;
+    padding: var(--space-md);
+    box-sizing: border-box;
+  }
+  
+  .countdown__title {
+    font-size: var(--font-size-medium);
+  }
+  
+  .countdown__display {
+    font-size: var(--font-size-medium);
+  }
+  
+  .countdown__button {
+    font-size: var(--font-size-small);
+    padding: var(--space-xs) var(--space-sm);
+  }
 }
