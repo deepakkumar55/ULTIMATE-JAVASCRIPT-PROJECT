@@ -8,6 +8,10 @@ const INTERSECTION_OBSERVER_OPTIONS = {
 };
 const SCROLL_THROTTLE_DELAY = 20;
 const LAZY_LOAD_OFFSET = 500;
+const LAZY_CLASS = 'lazy';
+const ERROR_MESSAGE = {
+  NO_SRC: "Image source not found"
+};
 
 // Module IntersectionObserver
 const IntersectionObserverModule = {
@@ -80,10 +84,10 @@ const ImageLoader = {
   async load(image) {
     try {
       if (!image.dataset.src) {
-        throw new Error("Image source not found");
+        throw new Error(ERROR_MESSAGE.NO_SRC);
       }
       await this.loadImage(image, image.dataset.src);
-      image.classList.remove("lazy");
+      image.classList.remove(LAZY_CLASS);
     } catch (error) {
       console.error("Error loading image:", error);
     }
