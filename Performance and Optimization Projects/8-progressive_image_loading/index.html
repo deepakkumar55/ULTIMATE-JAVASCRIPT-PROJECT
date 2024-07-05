@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Progressive Image Loading with BEM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="page">
+  <div class="page__container">
+    <header class="header">
+      <h1 class="header__title">Progressive Image Loading</h1>
+      <p class="header__subtitle">Enable throttling in your dev tools to better see the effect</p>
+      <div class="theme-switcher">
+        <button class="theme-switcher__btn theme-switcher__btn--light">Light Theme</button>
+        <button class="theme-switcher__btn theme-switcher__btn--dark">Dark Theme</button>
+      </div>
+      <div class="color-picker">
+        <input type="color" class="color-picker__input" id="primaryColorPicker" value="#3498db">
+        <input type="color" class="color-picker__input" id="secondaryColorPicker" value="#2ecc71">
+      </div>
+    </header>
+
+    <main class="gallery">
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://res.cloudinary.com/sourcetoad/image/upload/v1483582294/frog-sm_sg9llg.jpg')"
+            data-image="https://res.cloudinary.com/sourcetoad/image/upload/v1483582295/frog-lg_ikekce.jpg">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://res.cloudinary.com/sourcetoad/image/upload/v1483582294/frog-2-sm_zjphps.jpg')"
+            data-image="https://res.cloudinary.com/sourcetoad/image/upload/v1483582295/frog-2-lg_vahxhg.jpg">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://res.cloudinary.com/sourcetoad/image/upload/v1483582294/frog-3-sm_xsjmqo.jpg')"
+            data-image="https://res.cloudinary.com/sourcetoad/image/upload/v1483582295/frog-3-lg_cgu28a.jpg">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1579380656108-f98e4df8ea62?w=200')"
+            data-image="https://images.unsplash.com/photo-1579380656108-f98e4df8ea62?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1551189014-fe516aed0e9e?w=200')"
+            data-image="https://images.unsplash.com/photo-1551189014-fe516aed0e9e?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1598537179958-687e6cc625fb?w=200')"
+            data-image="https://images.unsplash.com/photo-1598537179958-687e6cc625fb?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1598537179958-687e6cc625fb?w=200')"
+            data-image="https://images.unsplash.com/photo-1598537179958-687e6cc625fb?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=200')"
+            data-image="https://images.unsplash.com/photo-1504450874802-0ba2bcd9b5ae?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1528158222524-d4d912d2e208?w=200')"
+            data-image="https://images.unsplash.com/photo-1528158222524-d4d912d2e208?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+      <div class="gallery__item">
+        <div class="progressive-image">
+          <div class="progressive-image__loading"
+            style="background-image: url('https://images.unsplash.com/photo-1551189014-fe516aed0e9e?w=200')"
+            data-image="https://images.unsplash.com/photo-1551189014-fe516aed0e9e?w=1000">
+          </div>
+          <div class="progressive-image__overlay"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+  <script src="script.js" type="module"></script>
+</body>
+
+</html>
