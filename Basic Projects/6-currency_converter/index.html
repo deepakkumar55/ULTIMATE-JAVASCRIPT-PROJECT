@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="container">
+    <h1 class="title">Currency Converter</h1>
+    <div class="converter">
+      <div class="converter__input">
+        <input type="number" id="amount" class="converter__amount" placeholder="Enter amount">
+        <select id="fromCurrency" class="converter__select"></select>
+      </div>
+      <div class="converter__input">
+        <input type="text" id="result" class="converter__result" readonly>
+        <select id="toCurrency" class="converter__select"></select>
+      </div>
+      <button id="convertBtn" class="converter__button">Convert</button>
+    </div>
+    <div class="theme-switcher">
+      <button id="lightTheme" class="theme-switcher__button">Light</button>
+      <button id="darkTheme" class="theme-switcher__button">Dark</button>
+    </div>
+    <div class="color-picker">
+      <input type="color" id="primaryColorPicker" class="color-picker__input">
+      <input type="color" id="secondaryColorPicker" class="color-picker__input">
+    </div>
+  </div>
+  <script type="module" src="script.js"></script>
+</body>
+
+</html>
