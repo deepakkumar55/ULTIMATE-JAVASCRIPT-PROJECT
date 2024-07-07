@@ -4,7 +4,9 @@
   --background-color: #ffffff;
   --text-color: #333333;
   --header-bg: #f0f0f0;
-  
+  --disabled-bg-color: #cccccc;
+  --disabled-text-color: #666666;
+
   --fs-small: 0.875rem;
   --fs-medium: 1rem;
   --fs-large: 1.25rem;
@@ -82,6 +84,17 @@ body {
 
 .converter__button:hover {
   background-color: var(--secondary-color);
+}
+
+.converter__button:disabled {
+  background-color: var(--disabled-bg-color);
+  color: var(--disabled-text-color);
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.converter__button:disabled:hover {
+  background-color: var(--disabled-bg-color);
 }
 
 .theme-switcher {
