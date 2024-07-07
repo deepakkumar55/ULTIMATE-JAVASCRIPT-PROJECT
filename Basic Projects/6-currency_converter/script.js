@@ -1,5 +1,5 @@
-import ThemeManager from './assets/js/themeManager.js';
-import CurrencyConverter from './assets/js/currencyConverter.js';
+import ThemeManager from './assets/js/ThemeManager.js';
+import CurrencyConverter from './assets/js/CurrencyConverter.js';
 
 const themeManager = new ThemeManager();
 const currencyConverter = new CurrencyConverter();
