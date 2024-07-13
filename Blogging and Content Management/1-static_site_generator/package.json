@@ -1,0 +1,16 @@
+{
+  "name": "static_site_generator",
+  "version": "1.0.0",
+  "description": "A simple static site generator",
+  "main": "src/generate.js",
+  "scripts": {
+    "generate": "node src/generate.js",
+    "start": "http-server dist"
+  },
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "marked": "^2.1.3"
+  }
+}
