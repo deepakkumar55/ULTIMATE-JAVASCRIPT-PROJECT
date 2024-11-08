@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivia Game</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="game-container">
+    <h1>Trivia Game</h1>
+
+    <div id="start-container" class="start-container">
+      <button id="start-button">Start Game</button>
+    </div>
+
+    <div id="game-container" class="hidden">
+      <div id="question-container">
+        <p id="question">Loading question...</p>
+        <p id="category">Category: </p>
+        <p id="difficulty">Difficulty: </p>
+      </div>
+      <div id="answer-buttons" class="button-container">
+        <!-- Answer buttons will be inserted here dynamically -->
+      </div>
+      <div id="timer-container">
+        <p>Time Remaining: <span id="timer">10</span> seconds</p>
+      </div>
+      <div id="score-container">
+        <p>Score: <span id="score">0</span></p>
+      </div>
+      <div id="next-button-container" class="hidden">
+        <button id="next-button">Next Question</button>
+      </div>
+      <div id="loading" class="hidden">Loading...</div>
+      <div id="feedback-container" class="hidden">
+        <p id="feedback">Correct!</p>
+      </div>
+    </div>
+
+    <div id="game-over-container" class="hidden">
+      <h2>Game Over!</h2>
+      <p>Your Final Score: <span id="final-score"></span></p>
+      <button id="restart-button">Restart Game</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
