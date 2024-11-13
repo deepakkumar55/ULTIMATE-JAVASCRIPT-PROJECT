@@ -1,0 +1,165 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f7fc;
+    color: #333;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    margin: 0;
+  }
+  
+  /* Search Form Styles */
+  #repo-search {
+    margin: 20px auto;
+    text-align: center;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Issue List Styles */
+  #issuesList {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 20px auto;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+  }
+  
+  #issuesList li {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  #issuesList li:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .issue-status {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 20px;
+    text-transform: capitalize;
+    color: white;
+  }
+  
+  #issuesList li.open .issue-status {
+    background: linear-gradient(135deg, #00b0ff, #007bff); /* Blue gradient for open issues */
+  }
+  
+  #issuesList li.closed .issue-status {
+    background: linear-gradient(135deg, #6c757d, #adb5bd); /* Gray gradient for closed issues */
+  }
+  
+  #issuesList li.in-progress .issue-status {
+    background: linear-gradient(135deg, #ffc107, #ff9800); /* Yellow gradient for in-progress issues */
+  }
+  
+  #issuesList li a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    margin-top: 10px;
+    display: block;
+  }
+  
+  #issuesList li a:hover {
+    text-decoration: underline;
+  }
+  
+  #issuesList li p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  #issuesList li .fix-button {
+    background-color: #28a745;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%;
+    margin-top: 15px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+  }
+  
+  #issuesList li .fix-button:hover {
+    background-color: #218838;
+  }
+  
+  #loading-indicator {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+  
+  #no-issues {
+    text-align: center;
+    color: #777;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    #issuesList {
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #repo-search input {
+      width: 100%;
+    }
+  }
+  

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fix Bugs in Open Source Projects</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Fix Bugs in Open Source Projects</h1>
+  </header>
+
+  <section id="repo-search">
+    <h2>Search Repository</h2>
+    <form id="repoSearchForm">
+      <label for="repoUrl">Enter Repository (e.g., owner/repo)</label>
+      <input type="text" id="repoUrl" placeholder="e.g., facebook/react" required>
+      <button type="submit">Search Issues</button>
+    </form>
+    <p id="error-message" class="hidden"></p>
+  </section>
+
+  <section id="issue-list">
+    <h2>Issues in Repository</h2>
+    <div id="loading-indicator" class="hidden">Loading issues...</div>
+    <ul id="issuesList"></ul>
+    <p id="no-issues" class="hidden">No issues found in this repository.</p>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
