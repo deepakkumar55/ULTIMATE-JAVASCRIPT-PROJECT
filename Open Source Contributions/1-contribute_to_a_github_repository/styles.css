@@ -1,0 +1,147 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f7fafc;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+  background-color: #0D47A1;
+  padding: 40px 0;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+header .subheading {
+  font-size: 1.2rem;
+  color: #B3E5FC;
+  margin-top: 10px;
+}
+
+.darkModeButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Step Section Styles */
+#steps {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+}
+
+.step-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step-card:hover {
+  transform: translateY(-10px);
+}
+
+.step-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.step-header i {
+  font-size: 2rem;
+  color: #0D47A1;
+}
+
+.step-card h3 {
+  font-size: 1.5rem;
+  color: #0D47A1;
+  margin-top: 10px;
+}
+
+.step-card p {
+  font-size: 1rem;
+  color: #555;
+  margin-top: 15px;
+}
+
+.cta-btn {
+  background-color: #0D47A1;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.cta-btn:hover {
+  background-color: #1565C0;
+}
+
+pre {
+  background-color: #E3F2FD;
+  padding: 10px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+  color: #555;
+}
+
+/* Progress Bar */
+.progress {
+  margin-top: 40px;
+  background-color: #eee;
+  border-radius: 5px;
+  height: 20px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+.progress-bar {
+  background-color: #0D47A1;
+  height: 100%;
+  width: 0%;
+  border-radius: 5px;
+  transition: width 0.4s ease-in-out;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #0D47A1;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GitHub Contribution Guide</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- FontAwesome for Icons -->
+</head>
+<body>
+
+  <!-- Main Header with Dark Mode Toggle -->
+  <header>
+    <div class="container">
+      <h1>Contribute to a GitHub Repository</h1>
+      <p class="subheading">Follow the steps to make your first contribution</p>
+      <button id="darkModeToggle" class="darkModeButton">🌙</button>
+    </div>
+  </header>
+
+  <!-- Main Content Area with Steps -->
+  <main>
+    <div class="container">
+      <!-- Progress Tracker -->
+      <div class="progress">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+
+      <section id="steps">
+        <!-- Step 1 -->
+        <div class="step-card" id="step1">
+          <div class="step-header">
+            <i class="fas fa-code-branch"></i>
+            <h3>Step 1: Fork the Repository</h3>
+          </div>
+          <p>Click the <strong>Fork</strong> button in the top-right corner of the repository.</p>
+          <button class="cta-btn" onclick="copyCommand('git clone https://github.com/your-username/repo.git')">Copy Command</button>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card" id="step2">
+          <div class="step-header">
+            <i class="fas fa-download"></i>
+            <h3>Step 2: Clone the Repository</h3>
+          </div>
+          <p>Copy the repository URL and run this command in your terminal:</p>
+          <pre><code>git clone https://github.com/your-username/repo.git</code></pre>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card" id="step3">
+          <div class="step-header">
+            <i class="fas fa-pen"></i>
+            <h3>Step 3: Make Changes</h3>
+          </div>
+          <p>Make your changes in your local repository and commit them:</p>
+          <pre><code>git commit -m "Your commit message"</code></pre>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="step-card" id="step4">
+          <div class="step-header">
+            <i class="fas fa-arrow-up"></i>
+            <h3>Step 4: Push Changes</h3>
+          </div>
+          <p>Push your changes to your GitHub repository:</p>
+          <pre><code>git push origin branch-name</code></pre>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="step-card" id="step5">
+          <div class="step-header">
+            <i class="fas fa-external-link-alt"></i>
+            <h3>Step 5: Create a Pull Request</h3>
+          </div>
+          <p>Go to your forked repository and create a pull request with the changes.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Made with ❤️ for GitHub contributors</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
