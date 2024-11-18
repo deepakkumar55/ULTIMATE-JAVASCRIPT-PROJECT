@@ -2,84 +2,105 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
-    <title>Pomodoro Timer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="Boost your productivity with our Pomodoro Timer. Features customizable work sessions, short and long breaks, dark mode, and session tracking for effective time management.">
+	<title>Pomodoro Timer</title>
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+	<noscript>
+			<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+	</noscript>
+	<link rel="stylesheet" href="style.css">
+	<noscript>
+			<link rel="stylesheet" href="style.css">
+	</noscript>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 </head>
 
 <body>
-    <div class="container">
-        <h1>Pomodoro Timer</h1>
-        <div id="timer" class="timer">..:..</div>
-        <div class="buttons">
-            <button id="startStop">Start</button>
-            <button id="openSetting">Settings</button>
-        </div>
-        <div id="timer-status" class="timer-status">Work Time</div>
-        <div id="sessionCount">Pomodoros this session: ...</div>
-        <div id="totalCount">Total Pomodoros: ...</div>
-        <button id="darkModeToggle">Toggle Dark Mode</button>
-    </div>
+	<main class="container">
+		<header>
+			<h1>Pomodoro Timer</h1>
+		</header>
 
-    <audio id="alarmSound" src="/assets/music/alarm.wav"></audio>
-    <div class="modal micromodal-slide" id="modal-settings" aria-hidden="true">
-        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
-            <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-settings-title">
-                <header class="modal__header">
-                    <h2 class="modal__title" id="modal-settings-title">
-                        Settings
-                    </h2>
-                    <button class="modal__close" aria-label="Close modal" data-micromodal-close>X</button>
-                </header>
-                <main class="modal__content" id="modal-settings-content">
-                    <div class="setting">
-                        <label for="workTime">Work Time (minutes):</label>
-                        <input type="number" id="workTime" min="1" max="60" value="25">
-                    </div>
-                    <div class="setting">
-                        <label for="breakTime">Short Break Time (minutes):</label>
-                        <input type="number" id="breakTime" min="1" max="30" value="5">
-                    </div>
-                    <div class="setting">
-                        <label for="longBreakTime">Long Break Time (minutes):</label>
-                        <input type="number" id="longBreakTime" min="10" max="30" value="15" step="1">
-                    </div>
-                    <div class="setting">
-                        <label for="cyclesBeforeLongBreak">Cycles before Long Break:</label>
-                        <input type="number" id="cyclesBeforeLongBreak" min="1" max="10" value="4" step="1">
-                    </div>
-                </main>
-                <footer class="modal__footer">
-                    <button class="modal__btn modal__btn-primary" data-micromodal-close
-                        aria-label="Save settings">Save</button>
-                </footer>
-            </div>
-        </div>
-    </div>
+		<section class="timer-section">
+			<time id="timer" class="timer">..:..</time>
+			<nav class="buttons">
+				<button id="startStop">Start</button>
+				<button id="openSetting">Settings</button>
+			</nav>
+			<p id="timer-status" class="timer-status">Work Time</p>
+		</section>
 
-    <div class="modal micromodal-slide modalAudio" id="modalaudio" aria-hidden="true">
-        <div class="modal-audio__overlay" tabindex="-1" data-micromodal-close>
-          <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modalaudio-title">
-            <header class="modal__header">
-              <h2 class="modal__title" id="modalaudio-title">
-                Enable Audio
-              </h2>
-            </header>
-            <main class="modal__content" id="modalaudio-content">
-              <p>We need your permission to play audio. Please click the button below to enable audio playback.</p>
-            </main>
-            <footer class="modal__footer">
-              <button class="modal__btn modal__btn-primary" id="enableAudioButton">Enable Audio</button>
-            </footer>
-          </div>
-        </div>
-      </div>
+		<section class="stats-section">
+			<p id="sessionCount">Pomodoros this session: ...</p>
+			<p id="totalCount">Total Pomodoros: ...</p>
+		</section>
 
-    <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
-    <script src="script.js" type="module"></script>
-    <script src="./assets/js/validate.js" type="module"></script>
+		<aside>
+			<button id="darkModeToggle">Toggle Dark Mode</button>
+		</aside>
+	</main>
+
+	<audio id="alarmSound" src="/assets/music/alarm.wav"></audio>
+
+	<!-- Settings Modal -->
+	<aside class="modal micromodal-slide" id="modal-settings" aria-hidden="true">
+		<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-settings-title">
+				<header class="modal__header">
+					<h2 class="modal__title" id="modal-settings-title">Settings</h2>
+					<button class="modal__close" aria-label="Close modal" data-micromodal-close>X</button>
+				</header>
+				<div class="modal__content" id="modal-settings-content">
+					<form>
+						<div class="setting">
+							<label for="workTime">Work Time (minutes):</label>
+							<input type="number" id="workTime" min="1" max="60" value="25">
+						</div>
+						<div class="setting">
+							<label for="breakTime">Short Break Time (minutes):</label>
+							<input type="number" id="breakTime" min="1" max="30" value="5">
+						</div>
+						<div class="setting">
+							<label for="longBreakTime">Long Break Time (minutes):</label>
+							<input type="number" id="longBreakTime" min="10" max="30" value="15" step="1">
+						</div>
+						<div class="setting">
+							<label for="cyclesBeforeLongBreak">Cycles before Long Break:</label>
+							<input type="number" id="cyclesBeforeLongBreak" min="1" max="10" value="4" step="1">
+						</div>
+					</form>
+				</div>
+				<footer class="modal__footer">
+					<button class="modal__btn modal__btn-primary" aria-label="Save settings">Save</button>
+				</footer>
+			</div>
+		</div>
+	</aside>
+
+	<!-- Audio Permission Modal -->
+	<aside class="modal micromodal-slide modalAudio" id="modalaudio" aria-hidden="true">
+		<div class="modal-audio__overlay" tabindex="-1" data-micromodal-close>
+			<div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modalaudio-title">
+				<header class="modal__header">
+					<h2 class="modal__title" id="modalaudio-title">Enable Audio</h2>
+				</header>
+				<div class="modal__content" id="modalaudio-content">
+					<p>We need your permission to play audio. Please click the button below to enable audio playback.
+					</p>
+				</div>
+				<footer class="modal__footer">
+					<button class="modal__btn modal__btn-primary" id="enableAudioButton">Enable Audio</button>
+				</footer>
+			</div>
+		</div>
+	</aside>
+
+	<script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+	<script src="script.js" type="module"></script>
+	<script src="./assets/js/validate.js" type="module"></script>
 </body>
 
 </html>

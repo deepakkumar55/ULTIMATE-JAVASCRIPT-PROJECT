@@ -67,6 +67,8 @@ export class Settings {
           cyclesBeforeLongBreak: this.cyclesBeforeLongBreak
         });
       }
+
+      MicroModal.close('modal-settings');
     });
 
     openSettingButton.addEventListener('click', () => {
