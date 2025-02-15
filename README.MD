@@ -784,9 +784,13 @@ Here's the revised list with the added repository and live demo links for the pr
 ## Connect With me
 
 - **LinkedIn [Link](https://www.linkedin.com/in/raajaryan/)**
-- **Twitter [Link](https://x.com/dk_raajaryan)**
+- **LinkedIn [Link](https://www.linkedin.com/company/thecampuscoders/)**
+- **Twitter [Link](https://x.com/thecampuscoders)**
 - **Github [Link](http://github.com/deepakkumar55/)**
-- **Instagram [Link](https://www.instagram.com/_nature__editing/)**
+- **Instagram [Link]https://www.instagram.com/thecampuscoders/)**
+- **Discord [Link](https://discord.gg/n4mjduGbj8)**
+- **Telegram [Link](https://t.me/thecampuscoders)**
+- **Whatsapp [Link](https://chat.whatsapp.com/LZvb1gbMC0VKjVbHYP1JMF)**
 
 
 
