@@ -81,9 +81,10 @@ Thank you for your interest in the project. Together, we can build a more robust
 
 - I have added Dockerfile which will help to run the calculator app inside container.
 
----
+```
 Steps to run the application
 step 1:- pull the source code form repo.
 step 2:- Build the docker file with `docker build -t calculator .`
 Step 3:- Run the container with `docker run -d -p 8080:80 --name calculator-app calculator:latest`
-Step 4:- check your app in browser with `http:localhost:8080`
+Step 4:- check your app in browser with `http:localhost:8080`.
+```
