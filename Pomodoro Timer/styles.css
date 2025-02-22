@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Host+Grotesk:ital,wght@0,300..800;1,300..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+AU+SA:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+* {
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: "Host Grotesk", serif;
+  overflow: hidden;
+  background-image: url("assets/background.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  backdrop-filter: blur(10px);
+}
+
+.main-container {
+  display: flex;
+  margin: 50px;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  height: 600px;
+  width: 1000px;
+  box-shadow: 5px 5px 5px 1px rgba(29, 28, 28, 0.5);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  border: none;
+  border-radius: 20px;
+  gap: 50px;
+}
+
+.timer {
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 90%;
+  border-radius: 20px;
+  font-size: 300px;
+  color: #fff;
+}
+
+.quote {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 90%;
+  border-radius: 20px;
+  font-size: 70px;
+  color: #fff;
+}
+
+.selector {
+  display: flex;
+  gap: 10px;
+  outline: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  display: flex;
+  width: 200px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.icons{
+  width: 15px;
+}
+
+button {
+  width: 50px;
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 0;
+  background-color: rgb(249, 249, 249);
+  color: white;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+
+button:hover {
+  background-color: #c7bdbd;
+  transform: scale(1.05);
+}
