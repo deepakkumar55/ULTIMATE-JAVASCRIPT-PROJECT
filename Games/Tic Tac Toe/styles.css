@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500&family=Roboto:wght@400;500&display=swap");
+
+body {
+  font-family: "Kanit", sans-serif;
+  background-image: linear-gradient(
+    to right bottom,
+    #000b58,
+    #002960,
+    #05295f,
+    #161b59,
+    #240750
+  );
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  color: #ffffff;
+}
+
+.heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-size: 14px;
+  margin: 5px 0;
+  color: #ffffff;
+}
+
+.main-box {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #a888b5;
+  color: #ffffff;
+  border: none;
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  font-size: 40px;
+  font-weight: 500;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.1);
+}
+.cell:hover {
+  background-color: #8174a0;
+  transform: scale(1.05);
+  box-shadow: 0px 8px 14px rgba(0, 0, 0, 0.15);
+}
+
+p {
+  font-size: 50px;
+}
+
+.reset-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the button horizontally */
+  justify-content: center;
+  width: 100%; /* Ensures flexibility */
+  margin: 10px 0;
+}
+
+button.reset {
+  font-family: "Roboto", sans-serif;
+  padding: 10px 20px;
+  width: 100%; /* Makes button flexible */
+  max-width: 200px; /* Caps the maximum width */
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  border: none;
+  color: #ffffff;
+  background-color: #8174a0;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+button.reset:hover {
+  background-color: #a692d5;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+}
