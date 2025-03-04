@@ -4,13 +4,7 @@
 
 A brief description of the tailwind css landing page project.
 
-## Features
-
-- Feature 1
-- Feature 2
-- Feature 3
-
-## Technologies Used
+## Technologies
 
 - JavaScript
 - HTML
