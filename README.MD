@@ -1,6 +1,4 @@
-
-# Ultimate JavaScript Project Step-by-Step Guide
-https://capsule-render.vercel.app/api?type=rect&color=gradient&height=120&section=header&text=Ultimate%20JavaScript%20Project%20Guide%20🚀&fontSize=35&fontColor=white&animation=fadeIn&desc=Step-by-Step%20Roadmap%20to%20Build%20&%20Master%20JS%20Projects&descSize=20
+<img alt="Ultimate JavaScript Project Step-by-Step Guide" src="https://capsule-render.vercel.app/api?type=waving&amp;color=gradient&amp;height=300&amp;section=header&amp;text=JavaScript%20Project%20Ideas&amp;fontSize=70&amp;animation=fadeIn&amp;fontAlignY=38&amp;desc=Step-by-Step%20Roadmap%20to%20Build%20&%20Master%20JS%20Projects&amp;descAlignY=55&amp;descAlign=78">
 
 
 
