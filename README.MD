@@ -1,6 +1,7 @@
 
 # Ultimate JavaScript Project Step-by-Step Guide
-![Image description](https://miro.medium.com/v2/resize:fit:1200/0*wd6FQh1_55pIeleN.png)
+https://capsule-render.vercel.app/api?type=rect&color=gradient&height=120&section=header&text=Ultimate%20JavaScript%20Project%20Guide%20🚀&fontSize=35&fontColor=white&animation=fadeIn&desc=Step-by-Step%20Roadmap%20to%20Build%20&%20Master%20JS%20Projects&descSize=20
+
 
 
 Hello, fellow developers and tech enthusiasts!
