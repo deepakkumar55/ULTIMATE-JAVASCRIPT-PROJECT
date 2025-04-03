@@ -56,6 +56,27 @@ h1 {
 .weather-input button,
 .weather-input .location-btn {
   width: 100%;
+  margin-top: 5px;
+}
+
+.btn {
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: #5372F0; /* Simple solid color */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background: #3f5cd6; /* Slightly darker on hover */
+}
+
+.btn:active {
+  background: #2d46b3; /* Even darker on click */
 }
 
 .weather-data {
