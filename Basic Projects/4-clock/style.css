@@ -1,53 +1,485 @@
-/* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+/* Import Google font - Poppins and Roboto Mono */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap");
 
+/* CSS Variables - Color System */
+:root {
+  /* Primary Colors */
+  --primary-color: #6366f1; /* indigo */
+  --primary-light: #818cf8;
+  --primary-dark: #4f46e5;
+  
+  /* Accent Colors */
+  --accent-color: #f43f5e; /* rose */
+  --accent-light: #fb7185;
+  --accent-dark: #e11d48;
+  
+  /* Feedback Colors */
+  --success-color: #10b981; /* emerald */
+  --warning-color: #f59e0b; /* amber */
+  --error-color: #ef4444; /* red */
+  
+  /* Neutral Colors */
+  --white-color: #ffffff;
+  --light-color: #f8fafc;
+  --gray-light: #e2e8f0;
+  --gray: #94a3b8;
+  --gray-dark: #475569;
+  --dark-color: #1e293b;
+  --black-color: #0f172a;
+  
+  /* Theme Variables */
+  --bg-color: var(--light-color);
+  --text-color: var(--dark-color);
+  --text-muted: var(--gray-dark);
+  --card-bg: var(--white-color);
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --border-color: var(--gray-light);
+  
+  /* Clock-specific Variables */
+  --clock-face: var(--white-color);
+  --clock-border: var(--gray-light);
+  --hour-hand: var(--dark-color);
+  --minute-hand: var(--dark-color);
+  --second-hand: var(--accent-color);
+  --clock-center: var(--accent-color);
+  --tick-color: rgba(0, 0, 0, 0.1);
+  --tick-major: rgba(0, 0, 0, 0.2);
+  --tick-minor: rgba(0, 0, 0, 0.1);
+  
+  /* Typography */
+  --font-primary: "Poppins", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "Roboto Mono", SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  
+  /* Spacing System */
+  --spacing-xxs: 0.125rem; /* 2px */
+  --spacing-xs: 0.25rem;   /* 4px */
+  --spacing-sm: 0.5rem;    /* 8px */
+  --spacing-md: 1rem;      /* 16px */
+  --spacing-lg: 1.5rem;    /* 24px */
+  --spacing-xl: 2rem;      /* 32px */
+  --spacing-xxl: 3rem;     /* 48px */
+  
+  /* Transitions */
+  --transition-bounce: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Border Radii */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-full: 9999px;
+
+  /* Animations */
+  --animation-bounce: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  --animation-spring: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --animation-ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+  
+  /* Z-index layers */
+  --z-background: -1;
+  --z-default: 1;
+  --z-elevated: 10;
+  --z-overlay: 100;
+  --z-modal: 1000;
+}
+
+/* Dark Theme Overrides */
+body.dark {
+  --bg-color: var(--black-color);
+  --text-color: var(--light-color);
+  --text-muted: var(--gray);
+  --card-bg: var(--dark-color);
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
+  --border-color: var(--gray-dark);
+  
+  --clock-face: var(--dark-color);
+  --clock-border: var(--gray-dark);
+  --hour-hand: var(--light-color);
+  --minute-hand: var(--light-color);
+  --tick-color: rgba(255, 255, 255, 0.1);
+  
+  /* Keep accent colors vibrant in dark mode */
+  --accent-color: #fb7185; /* Brighter rose for better contrast */
+  --second-hand: #fb7185;
+  --clock-center: #fb7185;
+
+  /* Improved contrast for dark theme */
+  --border-color: #475569;
+  --tick-color: rgba(255, 255, 255, 0.15);
+  --tick-major: rgba(255, 255, 255, 0.25);
+  --tick-minor: rgba(255, 255, 255, 0.1);
+  
+  /* Optimized shadows for dark theme */
+  --card-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
 }
 
-:root {
-  --primary-color: #009688; /* teal */
-  --accent-color: #FF5722; /* deep orange */
-  --white-color: #f6f7fb;
-  --black-color: #18191a;
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+  font-size: 16px; /* Base font size for better rem calculations */
+  text-size-adjust: 100%; /* Prevent font size adjustment on orientation change */
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
 }
 
 body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  min-height: 100%;
+  transition: background-color var(--transition-normal), color var(--transition-normal);
   display: flex;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: var(--primary-color);
-  transition: background 0.3s ease-in-out;
+  flex-direction: column;
+  line-height: 1.6;
+  overflow-x: hidden;
+  text-rendering: optimizeSpeed; /* Improve text rendering performance */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-body.dark {
-  --primary-color: #242526; /* dark gray */
-  --accent-color: #FF5722; /* deep orange */
-  --white-color: #18191a;
-  --black-color: #fff;
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid var(--primary-light);
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px var(--white-color);
+}
+
+/* Skip to content link for screen readers */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary-color);
+  color: white;
+  padding: 8px;
+  z-index: var(--z-overlay);
+  transition: top 0.3s;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+button, input, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Keyboard Hints */
+.keyboard-hints {
+  text-align: center;
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-md);
+  opacity: 0.7;
+}
+
+/* Container and Layout */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Header Styles */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--spacing-md) 0;
+  margin-bottom: var(--spacing-lg);
+  position: relative;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.logo i {
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  filter: drop-shadow(0 0 2px rgba(99, 102, 241, 0.3));
+}
+
+.logo h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.header-controls {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.mode-switch {
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white-color);
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  border: none;
+  cursor: pointer;
+  transition: transform var(--transition-bounce), box-shadow var(--transition-normal);
+  box-shadow: 0 2px 10px rgba(99, 102, 241, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.mode-switch:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.mode-switch:active {
+  transform: translateY(1px);
+}
+
+/* Tab Navigation */
+.tab-navigation {
+  display: flex;
+  justify-content: center;
+  margin-bottom: var(--spacing-xl);
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.tab-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.tab-btn:hover {
+  color: var(--primary-color);
+  border-color: var(--primary-light);
+  transform: translateY(-2px);
+}
+
+.tab-btn:hover::before {
+  opacity: 1;
+}
+
+.tab-btn.active {
+  color: var(--primary-color);
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary-light);
+  font-weight: 600;
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background-color: var(--primary-color);
+  border-radius: var(--radius-full);
+}
+
+.tab-btn i {
+  font-size: 1.1rem;
+  transition: transform var(--transition-normal);
+}
+
+.tab-btn:hover i {
+  transform: translateY(-1px);
+}
+
+/* Tab Content */
+.tab-content {
+  flex: 1;
+  position: relative;
+}
+
+.tab-pane {
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tab-pane.active {
+  display: block;
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(20px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 60px;
+  gap: var(--spacing-xl);
 }
 
-.container .clock {
-  display: flex;
-  height: 300px; /* reduced size */
-  width: 300px; /* reduced size */
+/* Enhanced Analog Clock Styles */
+.clock-wrapper {
+  position: relative;
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) 0;
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  will-change: transform;
+  backface-visibility: hidden; /* Performance optimization */
+  contain: layout style; /* CSS containment for better performance */
+}
+
+.clock-wrapper:hover {
+  transform: scale(1.05);
+}
+
+/* Clock face with 3D effect */
+.clock {
+  position: relative;
+  width: 300px;
+  height: 300px;
   border-radius: 50%;
+  background: var(--clock-face);
+  box-shadow: var(--card-shadow),
+              inset 0 0 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--clock-border);
+  display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--white-color);
-  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.1), 0 25px 45px rgba(0, 0, 0, 0.1);
-  position: relative;
+  transition: all var(--transition-normal);
+  background: linear-gradient(135deg, var(--clock-face), rgba(255, 255, 255, 0.8));
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Tick marks and numbers */
+.clock::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  top: 5%;
+  left: 5%;
+  border-radius: 50%;
+  background: 
+    /* Hour marks */
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 29deg,
+      var(--tick-major) 29deg 31deg,
+      transparent 31deg 89deg,
+      var(--tick-major) 89deg 91deg,
+      transparent 91deg 149deg,
+      var(--tick-major) 149deg 151deg,
+      transparent 151deg 209deg,
+      var(--tick-major) 209deg 211deg,
+      transparent 211deg 269deg,
+      var(--tick-major) 269deg 271deg,
+      transparent 271deg 329deg,
+      var(--tick-major) 329deg 331deg,
+      transparent 331deg 360deg
+    );
+  opacity: 0.9;
+}
+
+/* Additional minute marks layer */
+.clock::after {
+  content: '';
+  position: absolute;
+  width: 95%;
+  height: 95%;
+  top: 2.5%;
+  left: 2.5%;
+  border-radius: 50%;
+  opacity: 0.5;
+  background: 
+    repeating-conic-gradient(
+      from 0deg,
+      transparent 0deg 5.9deg,
+      var(--tick-minor) 5.9deg 6.1deg,
+      transparent 6.1deg 11.9deg,
+      var(--tick-minor) 11.9deg 12.1deg,
+      transparent 12.1deg 17.9deg,
+      var(--tick-minor) 17.9deg 18.1deg,
+      transparent 18.1deg 23.9deg,
+      var(--tick-minor) 23.9deg 24.1deg,
+      transparent 24.1deg 29.9deg,
+      var(--tick-minor) 29.9deg 30.1deg,
+      transparent 30.1deg 35.9deg,
+      var(--tick-minor) 35.9deg 36.1deg,
+      /* Pattern repeats every 6 degrees */
+      transparent 36.1deg 360deg
+    );
+}
+
+.clock-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
 }
 
 .clock label {
@@ -59,18 +491,23 @@ body.dark {
 
 .clock label span {
   display: inline-block;
-  font-size: 24px; /* reduced size */
+  font-size: 1.25rem;
   font-weight: 600;
-  color: var(--black-color);
+  color: var(--text-color);
   transform: rotate(calc(var(--i) * (-360deg / 12)));
+  transition: color var(--transition-normal);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  contain: content; /* Optimize rendering performance */
 }
 
-.container .indicator {
+/* Center cap and hands with enhanced 3D effect */
+.indicator {
   position: absolute;
   height: 10px;
   width: 10px;
   display: flex;
   justify-content: center;
+  z-index: 10;
 }
 
 .indicator::before {
@@ -80,45 +517,928 @@ body.dark {
   width: 100%;
   border-radius: 50%;
   z-index: 100;
-  background: var(--black-color);
-  border: 4px solid var(--accent-color);
+  background: var(--clock-center);
+  border: 2px solid var(--clock-center);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  transition: all var(--transition-normal);
 }
 
-.indicator .hand {
+.indicator::after {
+  content: "";
   position: absolute;
-  height: 120px; /* reduced size */
-  width: 4px;
-  bottom: 0;
-  border-radius: 25px;
-  transform-origin: bottom;
-  background: var(--accent-color);
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+  z-index: 101;
+  background: rgba(255, 255, 255, 0.9);
+  transition: all var(--transition-normal);
 }
 
-.hand.minute {
-  height: 110px; /* reduced size */
-  width: 5px;
-  background: var(--black-color);
+.hand {
+  position: absolute;
+  bottom: 0;
+  border-radius: var(--radius-full);
+  transform-origin: bottom;
+  transition: background var(--transition-normal);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  transform: translateZ(0); /* Force hardware acceleration */
+  will-change: transform;
 }
 
 .hand.hour {
-  height: 90px; /* reduced size */
   width: 8px;
-  background: var(--black-color);
+  height: 80px;
+  background: var(--hour-hand);
+  z-index: 5;
+  background: linear-gradient(to top, var(--hour-hand), var(--hour-hand) 95%, transparent);
 }
 
-.mode-switch {
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 22px;
-  font-weight: 400;
-  display: inline-block;
-  color: var(--white-color);
-  background: var(--accent-color);
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+.hand.minute {
+  width: 6px;
+  height: 110px;
+  background: var(--minute-hand);
+  z-index: 6;
+  background: linear-gradient(to top, var(--minute-hand), var(--minute-hand) 95%, transparent);
+}
+
+.hand.second {
+  width: 2px;
+  height: 130px;
+  background: var(--second-hand);
+  z-index: 7;
+  transition: none; /* No transition for smooth movement */
+  background: linear-gradient(to top, var(--second-hand), var(--second-hand) 95%, transparent);
+  will-change: transform; /* Optimize for animations */
+  /* Enhanced center balance for second hand */
+  &::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: var(--second-hand);
+    border-radius: 50%;
+    bottom: -3px;
+    left: -2px;
+  }
+}
+
+/* Clock Info Display */
+.clock-info {
+  text-align: center;
+  background: var(--card-bg);
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: var(--radius-md);
+  box-shadow: var(--card-shadow);
+  min-width: 300px;
+  border: 1px solid var(--border-color);
+  transition: all var(--transition-normal);
+}
+
+.date-display {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  margin-bottom: var(--spacing-sm);
+}
+
+.time-display {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 500;
+  color: var(--text-color);
+  letter-spacing: 1px;
+}
+
+/* Digital Clock Styles */
+.digital-clock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-md);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+/* Pattern overlay */
+.digital-clock::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(var(--border-color) 1px, transparent 1px);
+  background-size: 20px 20px;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.digital-time {
+  font-family: var(--font-mono);
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  letter-spacing: 2px;
+  padding: 0.2em 0.5em;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.03);
+  position: relative;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-shadow: 0 0 10px rgba(var(--primary-color-rgb, 99, 102, 241), 0.3);
+  background: rgba(0, 0, 0, 0.03);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.digital-seconds {
+  font-family: var(--font-mono);
+  font-size: 1.8rem;
+  color: var(--accent-color);
+  letter-spacing: 1px;
+  animation: pulse 1s infinite;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.digital-date {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  letter-spacing: 1px;
+  min-height: 1.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Digital Controls with improved interaction */
+.digital-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.digital-controls button {
+  padding: 0.8em 1.5em;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
   cursor: pointer;
-  transition: background 0.3s ease-in-out;
+  transition: all var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
 }
 
-.mode-switch:hover {
-  background: #ff7043; /* lighter shade of deep orange */
+.digital-controls button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: rgba(99, 102, 241, 0.1);
+  transition: height 0.3s ease;
+  z-index: 0;
+}
+
+.digital-controls button span {
+  position: relative;
+  z-index: 1;
+}
+
+.digital-controls button:hover::before {
+  height: 100%;
+}
+
+.digital-controls button:hover {
+  border-color: var(--primary-light);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.digital-controls button.active {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: var(--primary-light);
+  color: var(--primary-color);
+  font-weight: 500;
+}
+
+/* Stopwatch Styles */
+.stopwatch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  border: 1px solid var(--border-color);
+}
+
+.stopwatch-display {
+  font-family: var(--font-mono);
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: 2px;
+  transition: all var(--transition-fast);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 0.2em 0.5em;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.stopwatch-running .stopwatch-display {
+  color: var(--primary-color);
+}
+
+/* Lap times with better scrolling and highlighting */
+.lap-times {
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  max-height: 250px;
+  display: flex;
+  flex-direction: column;
+}
+
+.lap-header {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.lap-list {
+  flex: 1;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-color) transparent;
+}
+
+.lap-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.lap-list::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: var(--radius-full);
+}
+
+.lap-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.lap-item {
+  display: grid;
+  grid-template-columns: 60px 1fr 1fr;
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-top: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  animation: fadeIn 0.3s ease-out;
+}
+
+.lap-item:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.lap-item.best {
+  color: var(--success-color);
+  font-weight: 500;
+  background: rgba(16, 185, 129, 0.05);
+}
+
+.lap-item.worst {
+  color: var(--accent-color);
+  font-weight: 500;
+  background: rgba(244, 63, 94, 0.05);
+}
+
+/* Enhanced Stopwatch Controls */
+.stopwatch-controls {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--spacing-md);
+}
+
+.control-btn {
+  padding: 0.8em 1.5em;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-color);
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  min-width: 100px;
+  position: relative;
+  overflow: hidden;
+}
+
+.control-btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.control-btn:hover::after {
+  left: 100%;
+}
+
+.control-btn:hover:not(:disabled) {
+  border-color: var(--primary-light);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.control-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.control-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+#stopwatch-start {
+  background: var(--success-color);
+  color: white;
+  border-color: var(--success-color);
+  box-shadow: 0 3px 6px rgba(16, 185, 129, 0.2);
+}
+
+#stopwatch-start:hover:not(:disabled) {
+  background: #0ca678;
+  border-color: #0ca678;
+  color: white;
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+}
+
+#stopwatch-start.stop {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  box-shadow: 0 3px 6px rgba(244, 63, 94, 0.2);
+}
+
+#stopwatch-start.stop:hover:not(:disabled) {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: white;
+  box-shadow: 0 4px 10px rgba(244, 63, 94, 0.3);
+}
+
+/* Timer Styles with improved input controls */
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-lg);
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  box-shadow: var(--card-shadow);
+  transition: all var(--transition-normal);
+  width: 100%;
+  max-width: 550px;
+}
+
+.timer-setup {
+  display: flex;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
+.time-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.time-input input {
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 1.5rem;
+  width: 80px;
+  text-align: center;
+  background: var(--card-bg);
+  color: var(--text-color);
+  -moz-appearance: textfield; /* Firefox */
+  transition: all var(--transition-fast);
+}
+
+.time-input input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+.time-input input::-webkit-outer-spin-button,
+.time-input input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.time-input label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: var(--spacing-xs);
+}
+
+/* Redesigned timer spinners */
+.time-spinners {
+  position: absolute;
+  right: 8px;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+}
+
+.time-spinners button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  color: var(--text-muted);
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.time-spinners button:hover {
+  color: var(--primary-color);
+  transform: scale(1.2);
+}
+
+/* Timer display with countdown effect */
+.timer-display {
+  font-family: var(--font-mono);
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--text-color);
+  letter-spacing: 2px;
+  padding: 0.2em 0.5em;
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.03);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.timer-running .timer-display {
+  color: var(--success-color);
+}
+
+.timer-ending .timer-display {
+  color: var(--accent-color);
+  animation: pulse 1s infinite;
+}
+
+/* Progress bar with animation */
+.timer-progress {
+  width: 100%;
+  height: 10px;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  margin: var(--spacing-sm) 0;
+}
+
+.progress-bar {
+  height: 100%;
+  width: 0;
+  background: var(--primary-color);
+  transition: width 1s linear;
+  background-image: linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.2) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.2) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 50px 50px;
+  animation: progressAnimation 2s linear infinite;
+}
+
+@keyframes progressAnimation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 50px 50px;
+  }
+}
+
+/* Timer presets with better hover effect */
+.timer-presets {
+  display: flex;
+  gap: var(--spacing-sm);
+  flex-wrap: wrap;
+  margin: var(--spacing-md) 0;
+  justify-content: center;
+}
+
+.preset-btn {
+  padding: 0.6em 1.2em;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.preset-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(99, 102, 241, 0.05));
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+  z-index: -1;
+}
+
+.preset-btn:hover {
+  border-color: var (--primary-light);
+  color: var(--primary-color);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.preset-btn:hover::before {
+  opacity: 1;
+}
+
+/* Sound controls with better styling */
+.timer-sound {
+  display: flex;
+  align-items: center;
+  gap: var (--spacing-sm);
+  margin-top: var(--spacing-md);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.timer-sound label {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-right: var(--spacing-sm);
+}
+
+.timer-sound select {
+  padding: 0.4em 0.8em;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background: var(--card-bg);
+  color: var(--text-color);
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.timer-sound select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+}
+
+/* Footer with subtle animation */
+.app-footer {
+  text-align: center;
+  padding: var(--spacing-xl) 0 var(--spacing-md);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  position: relative;
+}
+
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-color),
+    transparent
+  );
+}
+
+.app-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.app-footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: var(--primary-color);
+  transition: width var(--transition-normal);
+}
+
+.app-footer a:hover::after {
+  width: 100%;
+}
+
+.app-footer i {
+  color: var(--accent-color);
+  animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* Responsive Design */
+@media (min-width: 1024px) {
+  .clock-wrapper:hover {
+    transform: scale(1.05);
+  }
+}
+
+@media (max-width: 768px) {
+  .tab-navigation {
+    gap: var(--spacing-xs);
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+  
+  .digital-time {
+    font-size: 3.5rem;
+    padding: 0.15em 0.35em;
+  }
+  
+  .stopwatch-display, .timer-display {
+    font-size: 2.75rem;
+    padding: 0.15em 0.35em;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header {
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+  }
+  
+  .tab-btn span {
+    display: none;
+  }
+  
+  .tab-btn {
+    padding: var(--spacing-md);
+    font-size: 1.2rem;
+    flex: 1;
+    min-width: 0;
+    justify-content: center;
+  }
+  
+  .tab-navigation {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 5px;
+  }
+  
+  .logo h1 {
+    font-size: 1.5rem;
+  }
+  
+  .clock {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .clock label span {
+    font-size: 1rem;
+  }
+  
+  .hand.hour {
+    height: 70px;
+  }
+  
+  .hand.minute {
+    height: 90px;
+  }
+  
+  .hand.second {
+    height: 110px;
+  }
+  
+  .digital-time {
+    font-size: 2.25rem;
+  }
+  
+  .stopwatch-display, .timer-display {
+    font-size: 1.75rem;
+  }
+  
+  .digital-date, .date-display {
+    font-size: 0.9rem;
+  }
+  
+  .digital-seconds {
+    font-size: 1.4rem;
+  }
+  
+  .time-input input {
+    width: 60px;
+    font-size: 1.25rem;
+    padding: var(--spacing-sm);
+  }
+  
+  .stopwatch-controls, .timer-controls {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .control-btn {
+    width: 100%;
+  }
+  
+  .keyboard-hints {
+    font-size: 0.75rem;
+  }
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .clock-wrapper:hover {
+    transform: none !important;
+  }
+  
+  @keyframes pulse {
+    0%, 50%, 100% { opacity: 1; }
+  }
+  
+  @keyframes heartbeat {
+    0%, 50%, 100% { transform: scale(1); }
+  }
+}
+
+/* Performance optimization for animations */
+@media (prefers-reduced-motion: no-preference) {
+  .hand.second {
+    transition: none; /* Better performance for second hand */
+    will-change: transform;
+  }
+  
+  .digital-seconds {
+    animation: pulse 1s infinite;
+  }
+  
+  .progress-bar {
+    animation: progressAnimation 2s linear infinite;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .app-container {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  
+  .app-header, .tab-navigation, .footer, .control-btn, .mode-switch, .digital-controls {
+    display: none;
+  }
+  
+  .tab-pane {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    margin-bottom: 2cm;
+  }
+  
+  .clock, .digital-clock, .stopwatch, .timer {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+
+  /* Ensure black text on white background for better printing */
+  * {
+    color: black !important;
+    background: white !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+  
+  /* Hide unnecessary elements when printing */
+  .keyboard-hints, .timer-progress, .digital-seconds, .time-spinners {
+    display: none !important;
+  }
+  
+  /* Make sure content fits on paper */
+  .clock {
+    page-break-inside: avoid;
+    border: 1px solid #000;
+  }
+}
+
+/* High contrast mode support - ensure elements remain visible */
+@media (forced-colors: active) {
+  .hand.second, .hand.minute, .hand.hour,
+  .indicator::before, .indicator::after {
+    forced-color-adjust: none;
+  }
+  
+  .tab-btn.active {
+    border: 2px solid;
+  }
+  
+  .control-btn:disabled {
+    opacity: 0.5;
+  }
 }

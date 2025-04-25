@@ -4,34 +4,166 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analog Clock JavaScript</title>
+    <meta name="description" content="ChronoSphere - A multi-function clock application with analog clock, digital clock, stopwatch, and timer features">
+    <title>ChronoSphere | Multi-function Clock</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Roboto+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <div class="clock">
-            <label style="--i: 1"><span>1</span></label>
-            <label style="--i: 2"><span>2</span></label>
-            <label style="--i: 3"><span>3</span></label>
-            <label style="--i: 4"><span>4</span></label>
-            <label style="--i: 5"><span>5</span></label>
-            <label style="--i: 6"><span>6</span></label>
-            <label style="--i: 7"><span>7</span></label>
-            <label style="--i: 8"><span>8</span></label>
-            <label style="--i: 9"><span>9</span></label>
-            <label style="--i: 10"><span>10</span></label>
-            <label style="--i: 11"><span>11</span></label>
-            <label style="--i: 12"><span>12</span></label>
-            
-            <div class="indicator">
-                <span class="hand hour"></span>
-                <span class="hand minute"></span>
-                <span class="hand second"></span>
+    <div class="app-container">
+        <header class="app-header" role="banner">
+            <div class="logo">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <h1>ChronoSphere</h1>
             </div>
-        </div>
-        
-        <div class="mode-switch">Dark Mode</div>
+            <div class="header-controls">
+                <button class="mode-switch" id="mode-switch" aria-label="Toggle dark mode">Dark Mode</button>
+            </div>
+        </header>
+
+        <nav class="tab-navigation" role="navigation" aria-label="Clock functions">
+            <button class="tab-btn active" data-tab="analog-clock" aria-selected="true" aria-controls="analog-clock">
+                <i class="fas fa-clock" aria-hidden="true"></i>
+                <span>Analog</span>
+            </button>
+            <button class="tab-btn" data-tab="digital-clock" aria-selected="false" aria-controls="digital-clock">
+                <i class="fas fa-digital-tachograph" aria-hidden="true"></i>
+                <span>Digital</span>
+            </button>
+            <button class="tab-btn" data-tab="stopwatch" aria-selected="false" aria-controls="stopwatch">
+                <i class="fas fa-stopwatch" aria-hidden="true"></i>
+                <span>Stopwatch</span>
+            </button>
+            <button class="tab-btn" data-tab="timer" aria-selected="false" aria-controls="timer">
+                <i class="fas fa-hourglass-half" aria-hidden="true"></i>
+                <span>Timer</span>
+            </button>
+        </nav>
+
+        <main class="tab-content" role="main">
+            <!-- Analog Clock Tab -->
+            <section class="tab-pane active" id="analog-clock" role="tabpanel" aria-labelledby="analog-tab">
+                <div class="container">
+                    <div class="clock-wrapper">
+                        <div class="clock" role="img" aria-label="Analog clock">
+                            <div class="clock-face">
+                                <!-- Clock numbers -->
+                                <label style="--i: 1"><span>1</span></label>
+                                <label style="--i: 2"><span>2</span></label>
+                                <label style="--i: 3"><span>3</span></label>
+                                <label style="--i: 4"><span>4</span></label>
+                                <label style="--i: 5"><span>5</span></label>
+                                <label style="--i: 6"><span>6</span></label>
+                                <label style="--i: 7"><span>7</span></label>
+                                <label style="--i: 8"><span>8</span></label>
+                                <label style="--i: 9"><span>9</span></label>
+                                <label style="--i: 10"><span>10</span></label>
+                                <label style="--i: 11"><span>11</span></label>
+                                <label style="--i: 12"><span>12</span></label>
+                            </div>
+                            
+                            <div class="indicator">
+                                <span class="hand hour" aria-hidden="true"></span>
+                                <span class="hand minute" aria-hidden="true"></span>
+                                <span class="hand second" aria-hidden="true"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="clock-info">
+                        <div class="date-display" id="date-display" aria-live="polite">
+                            Loading current date...
+                        </div>
+                        <div class="time-display" id="time-display" aria-live="polite">
+                            Loading current time...
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Digital Clock Tab -->
+            <section class="tab-pane" id="digital-clock" role="tabpanel" aria-labelledby="digital-tab">
+                <div class="container">
+                    <div class="digital-clock">
+                        <div class="digital-time" id="digital-time" aria-live="polite">00:00:00</div>
+                        <div class="digital-date" id="digital-date" aria-live="polite">Loading date...</div>
+                        <div class="digital-seconds" id="digital-seconds" aria-live="polite">00</div>
+                    </div>
+                    <div class="digital-controls">
+                        <button class="format-toggle" id="format-toggle" aria-pressed="false">12h / 24h</button>
+                        <button class="show-seconds-toggle" id="show-seconds-toggle" aria-pressed="false">Show Seconds</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stopwatch Tab -->
+            <section class="tab-pane" id="stopwatch" role="tabpanel" aria-labelledby="stopwatch-tab">
+                <div class="container">
+                    <div class="stopwatch">
+                        <div class="stopwatch-display" id="stopwatch-display" aria-live="polite">00:00:00.00</div>
+                        <div class="lap-times" id="lap-times">
+                            <div class="lap-header">
+                                <span class="lap-number">Lap</span>
+                                <span class="lap-time">Time</span>
+                                <span class="lap-total">Total</span>
+                            </div>
+                            <div class="lap-list" id="lap-list" aria-live="polite"></div>
+                        </div>
+                    </div>
+                    <div class="stopwatch-controls">
+                        <button class="control-btn" id="stopwatch-start">Start</button>
+                        <button class="control-btn" id="stopwatch-lap" disabled>Lap</button>
+                        <button class="control-btn" id="stopwatch-reset" disabled>Reset</button>
+                    </div>
+                    <div class="keyboard-hints">
+                        <span>Keyboard shortcuts: Space (Start/Stop), L (Lap), R (Reset)</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timer Tab -->
+            <section class="tab-pane" id="timer" role="tabpanel" aria-labelledby="timer-tab">
+                <div class="container">
+                    <div class="timer">
+                        <div class="timer-setup" id="timer-setup">
+                            <div class="time-input">
+                                <input type="number" id="hours" min="0" max="99" value="0" aria-label="Hours">
+                                <label for="hours">Hours</label>
+                            </div>
+                            <div class="time-input">
+                                <input type="number" id="minutes" min="0" max="59" value="0" aria-label="Minutes">
+                                <label for="minutes">Minutes</label>
+                            </div>
+                            <div class="time-input">
+                                <input type="number" id="seconds" min="0" max="59" value="0" aria-label="Seconds">
+                                <label for="seconds">Seconds</label>
+                            </div>
+                        </div>
+                        <div class="timer-display" id="timer-display" aria-live="polite">00:00:00</div>
+                        <div class="timer-progress" aria-hidden="true">
+                            <div class="progress-bar" id="timer-progress-bar"></div>
+                        </div>
+                    </div>
+                    <div class="timer-controls">
+                        <button class="control-btn" id="timer-start">Start</button>
+                        <button class="control-btn" id="timer-pause" disabled>Pause</button>
+                        <button class="control-btn" id="timer-reset" disabled>Reset</button>
+                    </div>
+                    <div class="keyboard-hints">
+                        <span>Keyboard shortcuts: Enter (Start), Space (Pause), R (Reset)</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Created with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="https://github.com/deepakkumar55/ULTIMATE-JAVASCRIPT-PROJECT" target="_blank" rel="noopener">ULTIMATE-JAVASCRIPT-PROJECT</a></p>
+        </footer>
     </div>
+
+    <script src="script.js"></script>
 </body>
-<script src="script.js" ></script>
 </html>
