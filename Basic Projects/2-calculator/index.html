@@ -3,33 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
+    <title>NeoCalc | Modern Calculator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="calculator">
-        <div class="display" id="display">0</div>
-        <div class="buttons">
-            <button class="btn" onclick="clearDisplay()">C</button>
-            <button class="btn" onclick="appendNumber('/')">/</button>
-            <button class="btn" onclick="appendNumber('*')">*</button>
-            <button class="btn" onclick="deleteNumber()">DEL</button>
-            <button class="btn" onclick="appendNumber('7')">7</button>
-            <button class="btn" onclick="appendNumber('8')">8</button>
-            <button class="btn" onclick="appendNumber('9')">9</button>
-            <button class="btn" onclick="appendNumber('-')">-</button>
-            <button class="btn" onclick="appendNumber('4')">4</button>
-            <button class="btn" onclick="appendNumber('5')">5</button>
-            <button class="btn" onclick="appendNumber('6')">6</button>
-            <button class="btn" onclick="appendNumber('+')">+</button>
-            <button class="btn" onclick="appendNumber('1')">1</button>
-            <button class="btn" onclick="appendNumber('2')">2</button>
-            <button class="btn" onclick="appendNumber('3')">3</button>
-            <button class="btn equal" onclick="compute()">=</button>
-            <button class="btn" onclick="appendNumber('0')">0</button>
-            <button class="btn" onclick="appendNumber('.')">.</button>
+    <div class="calculator-container">
+        <div class="calculator">
+            <div class="calculator-header">
+                <div class="calculator-name">
+                    <i class="fas fa-calculator"></i>
+                    <span>NeoCalc</span>
+                </div>
+                <div class="calculator-controls">
+                    <button id="history-toggle" class="icon-btn" title="Show History">
+                        <i class="fas fa-history"></i>
+                    </button>
+                    <button id="theme-toggle" class="icon-btn" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="display-container">
+                <div class="calculation" id="calculation"></div>
+                <div class="display" id="display">0</div>
+            </div>
+            
+            <div class="buttons">
+                <div class="button-row">
+                    <button class="btn function" data-action="clear">AC</button>
+                    <button class="btn function" data-action="delete">DEL</button>
+                    <button class="btn operator" data-action="percent">%</button>
+                    <button class="btn operator" data-action="divide">÷</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn number" data-number="7">7</button>
+                    <button class="btn number" data-number="8">8</button>
+                    <button class="btn number" data-number="9">9</button>
+                    <button class="btn operator" data-action="multiply">×</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn number" data-number="4">4</button>
+                    <button class="btn number" data-number="5">5</button>
+                    <button class="btn number" data-number="6">6</button>
+                    <button class="btn operator" data-action="subtract">−</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn number" data-number="1">1</button>
+                    <button class="btn number" data-number="2">2</button>
+                    <button class="btn number" data-number="3">3</button>
+                    <button class="btn operator" data-action="add">+</button>
+                </div>
+                <div class="button-row">
+                    <button class="btn function" data-action="plusMinus">±</button>
+                    <button class="btn number" data-number="0">0</button>
+                    <button class="btn number" data-number=".">.</button>
+                    <button class="btn equals" data-action="calculate">=</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="history-panel" id="history-panel">
+            <div class="history-header">
+                <h3>History</h3>
+                <button id="clear-history" class="icon-btn" title="Clear History">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
+            </div>
+            <div class="history-list" id="history-list"></div>
         </div>
     </div>
+    
+    <footer class="calculator-footer">
+        <p>Created with <i class="fas fa-heart"></i> by ULTIMATE-JAVASCRIPT-PROJECT</p>
+    </footer>
+
     <script src="script.js"></script>
 </body>
 </html>
