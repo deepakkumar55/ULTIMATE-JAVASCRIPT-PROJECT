@@ -3,22 +3,85 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TodoMatic</title>
+  <title>LifeCanvas | Task Dashboard</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="todo-app">
-    <h1>TodoMatic</h1>
-    <input id="new-task" type="text" placeholder="What needs to be done?" />
-    <button id="add-button">Add</button>
-    <div class="filter-buttons">
-      <button id="filter-all" class="active">All</button>
-      <button id="filter-active">Active</button>
-      <button id="filter-completed">Completed</button>
+  <div class="app-container">
+    <header class="app-header">
+      <div class="logo-container">
+        <i class="fas fa-paint-brush logo-icon"></i>
+        <h1>LifeCanvas</h1>
+      </div>
+      <div class="app-controls">
+        <button id="theme-toggle" class="theme-toggle">
+          <i class="fas fa-moon"></i>
+        </button>
+      </div>
+    </header>
+
+    <div class="dashboard">
+      <div class="sidebar">
+        <div class="user-profile">
+          <div class="avatar">
+            <i class="fas fa-user"></i>
+          </div>
+          <p>Task Dashboard</p>
+        </div>
+        <nav class="nav-menu">
+          <button class="nav-item active" data-filter="All">
+            <i class="fas fa-border-all"></i>
+            <span>All Tasks</span>
+          </button>
+          <button class="nav-item" data-filter="Active">
+            <i class="fas fa-hourglass-half"></i>
+            <span>In Progress</span>
+          </button>
+          <button class="nav-item" data-filter="Completed">
+            <i class="fas fa-check-circle"></i>
+            <span>Completed</span>
+          </button>
+        </nav>
+        <div class="task-stats">
+          <div class="stat-card">
+            <h3 id="task-count">0</h3>
+            <p>Tasks Remaining</p>
+          </div>
+        </div>
+      </div>
+
+      <main class="task-board">
+        <div class="board-header">
+          <h2 id="current-view">All Tasks</h2>
+          <div class="task-actions">
+            <div class="search-container">
+              <i class="fas fa-search"></i>
+              <input type="text" id="search-tasks" placeholder="Search tasks...">
+            </div>
+            <button id="add-task-btn" class="add-task-btn">
+              <i class="fas fa-plus"></i>
+              <span>New Task</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="task-input-panel hidden" id="task-input-panel">
+          <input id="new-task" type="text" placeholder="What needs to be done?" />
+          <div class="task-input-actions">
+            <button id="cancel-add">Cancel</button>
+            <button id="add-button">Add Task</button>
+          </div>
+        </div>
+
+        <div class="task-grid" id="task-list"></div>
+      </main>
     </div>
-    <h2 id="task-count">0 tasks remaining</h2>
-    <ul id="task-list"></ul>
   </div>
+
   <script src="scripts.js"></script>
 </body>
 </html>
