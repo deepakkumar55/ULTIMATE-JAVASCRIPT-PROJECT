@@ -2,31 +2,127 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Weather App Project</title>
+    <title>Atmosphere | Weather Forecast</title>
     <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="script.js" defer></script>
   </head>
   <body>
-    <h1>Weather Dashboard</h1>
-    <div class="container">
-      <div class="weather-input">
-        <h3>Enter a City Name</h3>
-        <input class="city-input" id="city" type="text" placeholder="E.g., Bhopal, Mehsi, Muzaffarpur, Patna">
-        <button class="search-btn btn" onclick="getWeather()">Search</button>
-        <div class="separator"></div>
-        <button class="location-btn btn" onclick="getWeatherByLocation()">Use Current Location</button>
-      </div>
-      <div class="weather-data">
-        <div class="current-weather">
-          <div class="details">
-            <h2 id="city-name">_______ ( ______ )</h2>
-            <h6 id="temp">Temperature: __°C</h6>
-            <h6 id="wind">Wind: __ M/S</h6>
-            <h6 id="humidity">Humidity: __%</h6>
+    <div class="app-container">
+      <div class="weather-app" id="weather-app">
+        <div class="app-header">
+          <div class="app-title">
+            <i class="fas fa-cloud-sun"></i>
+            <h1>Atmosphere</h1>
+          </div>
+          <div class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </div>
+        </div>
+
+        <div class="search-container">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="city" placeholder="Search for a city..." autocomplete="off">
+            <button id="search-btn" class="search-btn">
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+          <button id="location-btn" class="location-btn">
+            <i class="fas fa-location-crosshairs"></i>
+            <span>Current Location</span>
+          </button>
+        </div>
+
+        <div class="search-history" id="search-history">
+          <h3>Recent Searches</h3>
+          <div class="history-items" id="history-items"></div>
+        </div>
+
+        <div class="weather-content">
+          <!-- Loading indicator -->
+          <div class="loading-container" id="loading">
+            <div class="loader"></div>
+            <p>Fetching weather data...</p>
+          </div>
+
+          <!-- Error message -->
+          <div class="error-container" id="error-container">
+            <i class="fas fa-exclamation-circle"></i>
+            <p id="error-message">City not found. Please try again.</p>
+          </div>
+
+          <!-- Weather data container -->
+          <div class="weather-data-container" id="weather-data">
+            <div class="current-weather">
+              <div class="weather-header">
+                <div class="location">
+                  <h2 id="city-name">City Name</h2>
+                  <p id="current-date">Monday, 1 January</p>
+                </div>
+                <div class="weather-icon-large" id="weather-icon-main">
+                  <i class="fas fa-cloud"></i>
+                </div>
+              </div>
+              
+              <div class="temperature-container">
+                <div class="temperature">
+                  <h1 id="temperature">0°C</h1>
+                  <p id="weather-description">Weather description</p>
+                </div>
+                <div class="feels-like">
+                  <p>Feels like: <span id="feels-like">0°C</span></p>
+                </div>
+              </div>
+              
+              <div class="weather-details">
+                <div class="detail-item">
+                  <i class="fas fa-wind"></i>
+                  <div class="detail-info">
+                    <p class="detail-label">Wind</p>
+                    <p class="detail-value" id="wind">0 m/s</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-droplet"></i>
+                  <div class="detail-info">
+                    <p class="detail-label">Humidity</p>
+                    <p class="detail-value" id="humidity">0%</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-temperature-low"></i>
+                  <div class="detail-info">
+                    <p class="detail-label">Pressure</p>
+                    <p class="detail-value" id="pressure">0 hPa</p>
+                  </div>
+                </div>
+                <div class="detail-item">
+                  <i class="fas fa-eye"></i>
+                  <div class="detail-info">
+                    <p class="detail-label">Visibility</p>
+                    <p class="detail-value" id="visibility">0 km</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="forecast-container">
+              <h3>5-Day Forecast</h3>
+              <div class="forecast-items" id="forecast-items"></div>
+            </div>
           </div>
         </div>
       </div>
     </div>
+
+    <footer>
+      <p>Created with <i class="fas fa-heart"></i> by <a href="https://github.com/deepakkumar55/ULTIMATE-JAVASCRIPT-PROJECT" target="_blank">ULTIMATE-JAVASCRIPT-PROJECT</a></p>
+      <p>Powered by <a href="https://openweathermap.org/" target="_blank">OpenWeather API</a></p>
+    </footer>
   </body>
 </html>
