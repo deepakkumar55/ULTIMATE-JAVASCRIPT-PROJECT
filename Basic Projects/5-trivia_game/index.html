@@ -2,48 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Trivia Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>BrainWave | Ultimate Trivia Game</title>
+  <meta name="description" content="Test your knowledge with BrainWave Trivia, the ultimate trivia game with questions from various categories and difficulty levels.">
+  <meta name="theme-color" content="#6c5ce7">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Roboto+Mono&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <div class="game-container">
-    <h1>Trivia Game</h1>
+<body class="dark-mode-support">
+  <!-- Theme and Sound Controls -->
+  <div class="controls-container">
+    <button id="theme-toggle" aria-label="Toggle dark mode">
+      <svg class="sun-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+      <svg class="moon-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    <button id="sound-toggle" aria-label="Toggle sound">
+      <svg class="sound-on-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path><path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path></svg>
+      <svg class="sound-off-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><line x1="23" y1="9" x2="17" y2="15"></line><line x1="17" y1="9" x2="23" y2="15"></line></svg>
+    </button>
+  </div>
 
+  <div class="game-container">
+    <h1>BrainWave Trivia</h1>
+
+    <!-- Start Screen -->
     <div id="start-container" class="start-container">
-      <button id="start-button">Start Game</button>
+      <p>Challenge your knowledge with exciting questions across multiple categories!</p>
+      
+      <div class="options-group">
+        <label for="category-select">SELECT CATEGORY</label>
+        <select id="category-select">
+          <!-- Categories will be populated from JavaScript -->
+        </select>
+      </div>
+      
+      <div class="options-group">
+        <label for="difficulty-select">SELECT DIFFICULTY</label>
+        <select id="difficulty-select">
+          <option value="">Mixed Difficulty</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </div>
+      
+      <div class="options-group">
+        <label for="amount-select">NUMBER OF QUESTIONS</label>
+        <select id="amount-select">
+          <option value="5">5 Questions</option>
+          <option value="10" selected>10 Questions</option>
+          <option value="15">15 Questions</option>
+          <option value="20">20 Questions</option>
+        </select>
+      </div>
+      
+      <button id="start-button">Start Quiz</button>
+      
+      <!-- High Score Section -->
+      <div id="high-score-container" class="high-score-container">
+        <h3>Your Best Score</h3>
+        <div class="high-score">
+          <span id="high-score-value">0</span>
+          <span id="high-score-category">points</span>
+        </div>
+      </div>
     </div>
 
+    <!-- Game Screen -->
     <div id="game-container" class="hidden">
-      <div id="question-container">
-        <p id="question">Loading question...</p>
-        <p id="category">Category: </p>
-        <p id="difficulty">Difficulty: </p>
+      <div id="score-container">
+        <div>Score: <span id="score">0</span></div>
+        <div>Question: <span id="question-number">1/10</span></div>
       </div>
-      <div id="answer-buttons" class="button-container">
+      
+      <div id="question-container">
+        <div id="category" aria-label="Question category">General Knowledge</div>
+        <div id="difficulty" aria-label="Question difficulty">MEDIUM</div>
+        <p id="question" aria-live="polite">Loading question...</p>
+      </div>
+      
+      <div id="answer-buttons" role="region" aria-label="Answer options">
         <!-- Answer buttons will be inserted here dynamically -->
       </div>
-      <div id="timer-container">
-        <p>Time Remaining: <span id="timer">10</span> seconds</p>
+      
+      <div id="timer-container" aria-label="Time remaining">
+        <div id="timer-bar"></div>
+        <div id="timer-text">15s</div>
       </div>
-      <div id="score-container">
-        <p>Score: <span id="score">0</span></p>
+      
+      <div id="feedback-container" class="hidden" aria-live="assertive">
+        <p id="feedback">Correct!</p>
       </div>
+      
       <div id="next-button-container" class="hidden">
         <button id="next-button">Next Question</button>
       </div>
-      <div id="loading" class="hidden">Loading...</div>
-      <div id="feedback-container" class="hidden">
-        <p id="feedback">Correct!</p>
-      </div>
     </div>
 
+    <!-- Loading Screen -->
+    <div id="loading" class="hidden">
+      <div class="loader"></div>
+      <p>Preparing your quiz...</p>
+    </div>
+
+    <!-- Game Over Screen -->
     <div id="game-over-container" class="hidden">
-      <h2>Game Over!</h2>
-      <p>Your Final Score: <span id="final-score"></span></p>
-      <button id="restart-button">Restart Game</button>
+      <h2>Quiz Complete!</h2>
+      
+      <div class="results-container">
+        <!-- Medal will be inserted here if score is high enough -->
+        
+        <div class="score-circle">
+          <span id="final-score">0</span>
+          <span class="score-label">points</span>
+        </div>
+        
+        <p id="score-message">Great job!</p>
+        
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value" id="total-questions">10</div>
+            <div class="stat-label">Questions</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value" id="correct-answers">0</div>
+            <div class="stat-label">Correct</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value" id="accuracy">0%</div>
+            <div class="stat-label">Accuracy</div>
+          </div>
+        </div>
+        
+        <!-- New stats row -->
+        <div class="stats">
+          <div class="stat-item">
+            <div class="stat-value" id="average-time">0</div>
+            <div class="stat-label">Avg. Time</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value" id="longest-streak">0</div>
+            <div class="stat-label">Best Streak</div>
+          </div>
+          
+          <div class="stat-item">
+            <div class="stat-value" id="high-score-badge">-</div>
+            <div class="stat-label">High Score</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="action-buttons">
+        <button id="share-button" class="secondary-button">Share Results</button>
+        <button id="restart-button">Play Again</button>
+      </div>
     </div>
   </div>
+
+  <!-- Audio elements for sound effects -->
+  <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-bonus-awarded-2044.mp3" preload="auto"></audio>
+  <audio id="wrong-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
+  <audio id="victory-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
+  <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-simple-click-tone-1112.mp3" preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>

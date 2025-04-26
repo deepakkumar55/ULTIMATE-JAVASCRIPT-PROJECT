@@ -1,38 +1,90 @@
-# Trivia Game
+# BrainWave Trivia Game
 
-## Description
+## Overview
 
-A fun and interactive trivia game built with JavaScript, HTML, and CSS. This game challenges users with a series of questions across various categories, testing their knowledge and quick-thinking skills. Great for learning and entertainment!
+BrainWave Trivia is a feature-rich, interactive quiz application built with JavaScript, HTML, and CSS. Test your knowledge across various categories with this engaging trivia game that offers a seamless user experience and modern design.
+
+![BrainWave Trivia Game](https://raw.githubusercontent.com/yourusername/trivia-game/main/screenshot.png)
 
 ## Features
 
-- **Multiple Choice Questions**: Users are presented with several possible answers to each trivia question, selecting the one they believe is correct.
-- **Score Tracking**: Keeps track of the user's score, updating it based on correct and incorrect answers.
-- **Timer for Each Question**: Adds excitement and a sense of urgency by limiting the time allowed to answer each question.
+### Core Gameplay
+- **Multiple Categories**: Choose from a variety of categories including General Knowledge, Science, History, Geography, Entertainment, Sports, Technology, and Movies
+- **Difficulty Levels**: Select easy, medium, hard, or mixed difficulty to customize your challenge
+- **Timed Questions**: Answer against the clock with dynamic timers adjusted to question difficulty
+- **Score Tracking**: Advanced scoring system that rewards quick answers and answer streaks
+- **Game Statistics**: View detailed stats about your performance (accuracy, average time, best streak)
 
-## Technologies Used
+### Enhanced User Experience
+- **Theme Switcher**: Toggle between light and dark modes to suit your preference
+- **Sound Effects**: Audio feedback for correct/incorrect answers and victory celebrations
+- **Responsive Design**: Optimized for all device sizes from mobile to desktop
+- **Visual Feedback**: Animations and visual effects make the experience engaging
+- **High Score System**: Your best scores are saved locally and displayed for each category
 
-- **JavaScript**: Game logic and interactive features
-- **HTML**: Structure of the game interface
-- **CSS**: Styling for a visually appealing user experience
+### Technical Features
+- **No External APIs**: All questions are included locally for faster loading
+- **Smooth Animations**: Polished transitions between questions and game states
+- **Accessibility**: Built with accessibility in mind, including keyboard navigation and ARIA attributes
+- **Performance Optimized**: Fast loading and efficient resource usage
+- **Local Storage**: Game preferences and high scores persist between sessions
+
+## How to Play
+
+1. **Select Your Quiz Settings**:
+   - Choose a category of questions
+   - Select a difficulty level
+   - Choose the number of questions (5, 10, 15, or 20)
+
+2. **Answer Questions**:
+   - Read each question carefully
+   - Select an answer before the timer runs out
+   - Get bonus points for quick answers and consecutive correct answers
+
+3. **View Your Results**:
+   - See your final score and detailed statistics
+   - Check if you earned a medal based on your performance
+   - Share your results with friends
+   - Try to beat your high score!
 
 ## Setup
 
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/yourusername/trivia-game.git
-   cd trivia-game
-   ```
+### Option 1: Direct Download
+1. Clone or download this repository
+2. Open `index.html` in your browser
 
-2. **Open the index.html file**:
-   Simply open the `index.html` file in your web browser to start playing.
+### Option 2: Using a Local Server
+For the best experience, especially on Chrome, run the game using a local server:
 
-3. **(Optional) Run a local server**:
-   For a smoother experience, especially with JavaScript, consider using a local server.
-   ```bash
-   # For example, using Python
-   python -m http.server
-   ```
+```bash
+# Using Python
+python -m http.server
 
-4. **Access the game**:
-   Go to `http://localhost:8000` in your browser if using a local server.
+# Using Node.js
+npx serve
+```
+
+Then open `http://localhost:8000` or `http://localhost:3000` in your browser.
+
+## Customization
+
+Want to add your own questions? You can modify the `triviaDummyData` object in `script.js` to add more categories or questions.
+
+## Technical Implementation
+
+- **Vanilla JavaScript**: No frameworks needed, pure JavaScript for all functionality
+- **CSS Animations**: Smooth transitions and feedback animations using CSS
+- **LocalStorage API**: Persistent data storage for user preferences and high scores
+- **Web Audio API**: Sound effects handling with volume control
+- **Modern CSS**: Flexbox and Grid for responsive layouts
+- **ES6+ Features**: Modern JavaScript features for cleaner code
+
+## Credits
+
+- Fonts: Google Fonts (Montserrat, Poppins, Roboto Mono)
+- Icons: SVG Icons
+- Sound Effects: Mixkit
+
+## License
+
+This project is open source and available under the [MIT License](LICENSE).
