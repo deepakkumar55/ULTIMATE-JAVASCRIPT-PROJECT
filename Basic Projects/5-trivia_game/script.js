@@ -1151,8 +1151,18 @@ function toggleSound() {
 function playSound(soundElement) {
   if (soundEnabled && soundElement) {
     // Reset sound to start
-    soundElement.currentTime = 0;
-    soundElement.play().catch(e => console.log("Sound play error:", e));
+    try {
+      soundElement.currentTime = 0;
+      const playPromise = soundElement.play();
+      
+      if (playPromise !== undefined) {
+        playPromise.catch(error => {
+          console.log("Sound play error:", error);
+        });
+      }
+    } catch (error) {
+      console.log("Error playing sound:", error);
+    }
   }
 }
 
@@ -1534,7 +1544,7 @@ function addSparkleEffect(element) {
     sparkle.style.zIndex = '10';
     sparkle.style.pointerEvents = 'none';
     
-    // Use radial gradient for better visual
+    // Use simpler gradient for better performance
     sparkle.style.background = 'radial-gradient(circle, #FFD700 0%, rgba(255,215,0,0.2) 70%, transparent 100%)';
     sparkle.style.borderRadius = '50%';
     
@@ -1553,12 +1563,16 @@ function addSparkleEffect(element) {
     
     element.appendChild(sparkle);
     
-    // Set timeout for cleanup
+    // Set timeout for cleanup with a reference to avoid memory leaks
     setTimeout(() => {
-      if (element.contains(sparkle)) {
-        element.removeChild(sparkle);
+      try {
+        if (element && element.contains(sparkle)) {
+          element.removeChild(sparkle);
+        }
+      } catch (error) {
+        console.log("Error removing sparkle:", error);
       }
-    }, 2000); // Longer timeout to ensure animation completes
+    }, 2000);
   }
 }
 
@@ -1618,6 +1632,9 @@ function startTimer() {
 
 // Update timer display
 function updateTimerDisplay() {
+  // Make sure timeRemaining doesn't go below zero
+  timeRemaining = Math.max(0, timeRemaining);
+  
   timerText.textContent = `${timeRemaining}s`;
   
   // Update progress bar
@@ -1654,22 +1671,21 @@ function nextQuestion() {
 function showConfetti() {
   // Clear any existing confetti
   const existingConfetti = document.querySelectorAll('.confetti');
-  existingConfetti.forEach(c => c.remove());
+  existingConfetti.forEach(c => {
+    if (c.parentElement) {
+      c.parentElement.removeChild(c);
+    }
+  });
 
   // Create confetti container if it doesn't exist
   let confettiContainer = document.querySelector('.confetti-container');
-  if (!confettiContainer) {
-    confettiContainer = document.createElement('div');
-    confettiContainer.className = 'confetti-container';
-    confettiContainer.style.position = 'fixed';
-    confettiContainer.style.top = '0';
-    confettiContainer.style.left = '0';
-    confettiContainer.style.width = '100%';
-    confettiContainer.style.height = '100%';
-    confettiContainer.style.pointerEvents = 'none';
-    confettiContainer.style.zIndex = '1000';
-    document.body.appendChild(confettiContainer);
+  if (confettiContainer) {
+    document.body.removeChild(confettiContainer);
   }
+  
+  confettiContainer = document.createElement('div');
+  confettiContainer.className = 'confetti-container';
+  document.body.appendChild(confettiContainer);
   
   // Create confetti pieces
   for (let i = 0; i < 150; i++) {
@@ -1678,14 +1694,11 @@ function showConfetti() {
     
     // Random properties
     const colors = ['#6c5ce7', '#fd79a8', '#00b894', '#fdcb6e', '#74b9ff', '#ff7675', '#55efc4', '#a29bfe'];
-    const shapes = ['circle', 'triangle', 'rect', 'heart'];
-    const shape = shapes[Math.floor(Math.random() * shapes.length)];
-    
     const color = colors[Math.floor(Math.random() * colors.length)];
     const size = Math.random() * 10 + 5;
     const positionX = Math.random() * 100;
     
-    // Set base styles
+    // Set base styles with inline styles for better reliability
     confetti.style.position = 'absolute';
     confetti.style.left = `${positionX}vw`;
     confetti.style.top = '-20px';
@@ -1694,82 +1707,48 @@ function showConfetti() {
     confetti.style.backgroundColor = color;
     confetti.style.opacity = Math.random() * 0.8 + 0.2;
     
-    // Add shape
-    if (shape === 'circle') {
-      confetti.style.borderRadius = '50%';
-    } else if (shape === 'triangle') {
-      confetti.style.width = '0';
-      confetti.style.height = '0';
-      confetti.style.backgroundColor = 'transparent';
-      confetti.style.borderLeft = `${size/2}px solid transparent`;
-      confetti.style.borderRight = `${size/2}px solid transparent`;
-      confetti.style.borderBottom = `${size}px solid ${color}`;
-    } else if (shape === 'heart') {
-      confetti.style.backgroundColor = 'transparent';
-      confetti.style.width = `${size}px`;
-      confetti.style.height = `${size}px`;
-      confetti.style.transform = 'rotate(45deg)';
-      confetti.style.position = 'relative';
-      
-      const before = document.createElement('div');
-      before.style.content = '';
-      before.style.position = 'absolute';
-      before.style.top = '0';
-      before.style.left = '0';
-      before.style.width = '100%';
-      before.style.height = '100%';
-      before.style.backgroundColor = color;
-      before.style.borderRadius = '50%';
-      before.style.transformOrigin = '0 100%';
-      before.style.transform = 'translate(-50%, 0)';
-      
-      const after = document.createElement('div');
-      after.style.content = '';
-      after.style.position = 'absolute';
-      after.style.top = '0';
-      after.style.right = '0';
-      after.style.width = '100%';
-      after.style.height = '100%';
-      after.style.backgroundColor = color;
-      after.style.borderRadius = '50%';
-      after.style.transformOrigin = '100% 100%';
-      after.style.transform = 'translate(50%, 0)';
-      
-      confetti.appendChild(before);
-      confetti.appendChild(after);
-    }
+    // Use simple shapes (circles or squares) for better performance
+    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
     
-    // Animation properties - with more variation
-    const fallDuration = Math.random() * 5 + 3; // 3-8 seconds
-    const spinSpeed = Math.random() * 360;
-    const delay = Math.random() * 5; // 0-5 seconds delay
+    // Animation properties
+    const fallDuration = Math.random() * 3 + 2;
+    const fallDelay = Math.random() * 2;
     
-    confetti.style.animationDelay = `${delay}s`;
+    // Use CSS variables for animation control
     confetti.style.setProperty('--fall-duration', `${fallDuration}s`);
-    confetti.style.setProperty('--spin-speed', `${spinSpeed}deg`);
+    confetti.style.setProperty('--fall-delay', `${fallDelay}s`);
+    confetti.style.setProperty('--spin-speed', `${Math.random() * 360}deg`);
     
-    // Apply animations
     confetti.style.animation = `
-      confetti-fall var(--fall-duration) ease-in forwards,
-      confetti-shake 3s ease-in-out infinite,
+      confetti-fall ${fallDuration}s ${fallDelay}s linear forwards,
+      confetti-shake 3s ${fallDelay}s ease-in-out infinite,
       confetti-rotate 1s linear infinite
     `;
     
-    // Add to container
     confettiContainer.appendChild(confetti);
     
-    // Remove after animation complete
+    // Clean up after animation
     setTimeout(() => {
-      if (confettiContainer.contains(confetti)) {
-        confettiContainer.removeChild(confetti);
+      try {
+        if (confettiContainer && confettiContainer.contains(confetti)) {
+          confettiContainer.removeChild(confetti);
+        }
+      } catch (error) {
+        console.log("Error removing confetti:", error);
       }
-      
-      // Remove container if empty
-      if (confettiContainer.children.length === 0) {
+    }, (fallDuration + fallDelay) * 1000 + 500);
+  }
+  
+  // Remove container after all animations complete
+  setTimeout(() => {
+    try {
+      if (document.body.contains(confettiContainer)) {
         document.body.removeChild(confettiContainer);
       }
-    }, (fallDuration + delay) * 1000 + 1000); // Extra second for safety
-  }
+    } catch (error) {
+      console.log("Error removing confetti container:", error);
+    }
+  }, 10000);
 }
 
 // End game with enhanced stats
@@ -1848,35 +1827,39 @@ function endGame() {
 
 // Improved medal display that properly cleans up
 function addMedal(type) {
-  // Remove any existing medals
-  const existingMedals = document.querySelectorAll('.medal');
-  existingMedals.forEach(medal => {
-    if (medal.parentElement) {
-      medal.parentElement.removeChild(medal);
+  try {
+    // Remove any existing medals first
+    const existingMedals = document.querySelectorAll('.medal');
+    existingMedals.forEach(medal => {
+      if (medal.parentElement) {
+        medal.parentElement.removeChild(medal);
+      }
+    });
+    
+    const medalContainer = document.createElement('div');
+    medalContainer.className = 'medal';
+    
+    const medalIcon = document.createElement('div');
+    medalIcon.className = `medal-icon ${type}-medal`;
+    
+    // Add different emoji based on medal type
+    if (type === 'gold') {
+      medalIcon.textContent = '🏆';
+    } else if (type === 'silver') {
+      medalIcon.textContent = '🥈';
+    } else if (type === 'bronze') {
+      medalIcon.textContent = '🥉';
     }
-  });
-  
-  const medalContainer = document.createElement('div');
-  medalContainer.className = 'medal';
-  
-  const medalIcon = document.createElement('div');
-  medalIcon.className = `medal-icon ${type}-medal`;
-  
-  // Add different emoji based on medal type
-  if (type === 'gold') {
-    medalIcon.innerHTML = '🏆';
-  } else if (type === 'silver') {
-    medalIcon.innerHTML = '🥈';
-  } else if (type === 'bronze') {
-    medalIcon.innerHTML = '🥉';
-  }
-  
-  medalIcon.style.fontSize = '3rem';
-  medalContainer.appendChild(medalIcon);
-  
-  const resultsContainer = document.querySelector('.results-container');
-  if (resultsContainer) {
-    resultsContainer.prepend(medalContainer);
+    
+    medalIcon.style.fontSize = '3rem';
+    medalContainer.appendChild(medalIcon);
+    
+    const resultsContainer = document.querySelector('.results-container');
+    if (resultsContainer) {
+      resultsContainer.prepend(medalContainer);
+    }
+  } catch (error) {
+    console.log("Error adding medal:", error);
   }
 }
 

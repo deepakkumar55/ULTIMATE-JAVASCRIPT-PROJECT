@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BrainWave | Ultimate Trivia Game</title>
   <meta name="description" content="Test your knowledge with BrainWave Trivia, the ultimate trivia game with questions from various categories and difficulty levels.">
   <meta name="theme-color" content="#6c5ce7">
@@ -166,12 +166,20 @@
     </div>
   </div>
 
-  <!-- Audio elements for sound effects -->
-  <audio id="correct-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-game-bonus-awarded-2044.mp3" preload="auto"></audio>
-  <audio id="wrong-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" preload="auto"></audio>
-  <audio id="victory-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" preload="auto"></audio>
-  <audio id="click-sound" src="https://assets.mixkit.co/sfx/preview/mixkit-simple-click-tone-1112.mp3" preload="auto"></audio>
-
+  <!-- Fixed audio elements with fallbacks -->
+  <audio id="correct-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-game-bonus-awarded-2044.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="wrong-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-wrong-answer-fail-notification-946.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="victory-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-winning-chimes-2015.mp3" type="audio/mpeg">
+  </audio>
+  <audio id="click-sound" preload="auto">
+    <source src="https://assets.mixkit.co/sfx/preview/mixkit-simple-click-tone-1112.mp3" type="audio/mpeg">
+  </audio>
+  
   <script src="script.js"></script>
 </body>
 </html>

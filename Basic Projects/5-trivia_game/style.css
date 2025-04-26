@@ -725,7 +725,8 @@ button:focus {
   }
   
   .stats {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-sm);
   }
   
@@ -757,8 +758,9 @@ button:focus {
   }
   
   .medal {
-    top: -15px;
-    right: -15px;
+    top: -12px;
+    right: -12px;
+    transform: scale(0.8) rotate(30deg);
   }
   
   #game-over-container h2 {
@@ -860,7 +862,7 @@ button:focus {
 
 .high-score-container h3 {
   font-size: 0.9rem;
-  color: var (--gray-dark);
+  color: var(--gray-dark);
   margin-bottom: var(--space-xs);
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -1000,10 +1002,12 @@ button:focus {
 
 .dark-mode #feedback-container.correct {
   background-color: rgba(0, 184, 148, 0.2);
+  border-left-color: var(--success);
 }
 
 .dark-mode #feedback-container.incorrect {
   background-color: rgba(255, 118, 117, 0.2);
+  border-left-color: var(--danger);
 }
 
 /* Enhanced sparkle animation */
@@ -1047,7 +1051,7 @@ button:focus {
 .confetti {
   position: absolute;
   z-index: 1;
-  animation-fill-mode: forwards;
+  will-change: transform;
 }
 
 @keyframes confetti-fall {
